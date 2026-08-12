@@ -12,6 +12,7 @@
   <meta property="og:url" content="https://cloverbeemaker.ca/">
   <link rel="icon" href="cloverbee-mark.png">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="maker-preview.css">
 </head>
 <body>
   <header class="site-header">
@@ -43,39 +44,47 @@
         </div>
         <ul class="trust-strip" aria-label="Product highlights">
           <li>Works offline</li>
-          <li>Multi-device sync on Maker</li>
+          <li>Cloud-backed on every plan</li>
           <li>No ads</li>
         </ul>
       </div>
 
-      <div class="hero-preview" aria-label="CloverBee Maker interface preview">
-        <div class="preview-label">Interface preview</div>
-        <div class="device tablet">
+      <div class="hero-preview" aria-label="CloverBee Maker interface concept preview">
+        <div class="preview-label">Interface concept</div>
+        <div class="device tablet maker-tablet">
           <div class="device-bar"><span></span><span></span><span></span></div>
-          <div class="dashboard-head">
-            <div><small>Good morning</small><strong>Dashboard</strong></div>
-            <div class="avatar">CB</div>
+          <div class="maker-app-head">
+            <div class="maker-app-brand">
+              <span class="maker-leaf" aria-hidden="true">🍀</span>
+              <div><small>Prairie Candle Co.</small><strong>Maker</strong></div>
+            </div>
+            <div class="avatar">JD</div>
           </div>
-          <div class="metric-grid">
-            <article><small>Available stock</small><strong>247</strong><span>items</span></article>
-            <article><small>Open orders</small><strong>12</strong><span>3 due soon</span></article>
-            <article><small>Reserved</small><strong>34</strong><span>for events</span></article>
-            <article><small>Sales MTD</small><strong>$1,246</strong><span>CAD</span></article>
+          <div class="maker-home-grid">
+            <article><span>SALE</span><strong>New Sale</strong><small>Fast checkout</small></article>
+            <article><span>ORD</span><strong>New Order</strong><small>Reserve stock</small></article>
+            <article class="attention"><span>6</span><strong>Outstanding</strong><small>Deliver or collect</small></article>
+            <article><span>CRM</span><strong>Customers</strong><small>History &amp; totals</small></article>
+            <article><span>HIST</span><strong>Sales History</strong><small>Payments &amp; receipts</small></article>
+            <article><span>INV</span><strong>Inventory</strong><small>On hand / order</small></article>
+            <article class="production"><span>MAKE</span><strong>Production</strong><small>Materials &amp; batches</small></article>
+            <article><span>RPT</span><strong>Reports</strong><small>Year-to-date</small></article>
           </div>
-          <div class="chart-card">
-            <div><strong>Sales this month</strong><small>Demo data</small></div>
-            <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="stock-strip">
+            <div><small>On Hand</small><strong>86</strong></div>
+            <div><small>On Order</small><strong>14</strong></div>
+            <div><small>Available</small><strong>72</strong></div>
           </div>
         </div>
-        <div class="device phone">
+        <div class="device phone maker-phone">
           <div class="phone-notch"></div>
-          <div class="phone-title">Orders</div>
-          <div class="phone-tabs"><b>Upcoming</b><span>All orders</span></div>
-          <ul class="order-list">
-            <li><b>#1003</b><span>Sarah M.</span><em class="paid">Paid</em><small>Due Aug 12</small></li>
-            <li><b>#1004</b><span>Local Market</span><em class="reserved">Reserved</em><small>Due Aug 15</small></li>
-            <li><b>#1005</b><span>John D.</span><em class="due">1d due</em><small>Due Aug 18</small></li>
-            <li><b>#1006</b><span>Farmers' Market</span><em class="reserved">Reserved</em><small>Due Aug 22</small></li>
+          <div class="phone-title">Outstanding</div>
+          <div class="phone-tabs"><b>All</b><span>Not paid</span><span>Paid / due</span></div>
+          <ul class="order-list maker-order-list">
+            <li><b>#1042</b><span>Sarah M.</span><em class="paid">Paid</em><small>2 / 4 delivered</small></li>
+            <li><b>#1045</b><span>Market order</span><em class="reserved">Partial</em><small>$18 remaining</small></li>
+            <li><b>#1048</b><span>John D.</span><em class="due">Owing</em><small>Delivered · $24 due</small></li>
+            <li><b>#1050</b><span>Mae's Studio</span><em class="paid">Paid</em><small>0 / 6 delivered</small></li>
           </ul>
         </div>
       </div>
@@ -98,9 +107,9 @@
     <section class="section tax-section">
       <div class="tax-visual" aria-hidden="true">
         <div class="paper paper-one"><b>Sales</b><div class="mini-bars"><i></i><i></i><i></i><i></i></div></div>
-        <div class="paper paper-two"><b>Expenses</b><div class="mini-bars"><i></i><i></i><i></i><i></i></div></div>
-        <div class="paper paper-three"><b>Inventory</b><div class="mini-bars"><i></i><i></i><i></i><i></i></div></div>
-        <div class="calculator">1234<br>5678<br><strong>90.00</strong></div>
+        <div class="paper paper-two"><b>Purchases</b><div class="mini-bars"><i></i><i></i><i></i><i></i></div></div>
+        <div class="paper paper-three"><b>Taxes &amp; fees</b><div class="mini-bars"><i></i><i></i><i></i><i></i></div></div>
+        <div class="calculator">YTD<br>GST/PST<br><strong>Ready</strong></div>
       </div>
       <div class="tax-copy">
         <p class="eyebrow">Less bookkeeping rework</p>
@@ -147,16 +156,45 @@
         <p class="eyebrow">Take the business with you</p>
         <h2>Made for the workshop, market table and delivery run.</h2>
         <ul class="large-checks">
-          <li>Android first; iOS planned for commercial launch</li>
-          <li>Works offline</li>
-          <li>Syncs across devices on Maker</li>
-          <li>Fast entry for orders, expenses and inventory changes</li>
+          <li>Android &amp; iOS planned for commercial launch</li>
+          <li>Works offline with cloud-backed data</li>
+          <li>Paid plans support teams and multiple authorized devices</li>
+          <li>Fast entry for sales, orders, production and inventory changes</li>
         </ul>
       </div>
-      <div class="screen-row" aria-label="Interface concept previews">
-        <div class="mini-phone"><b>Inventory</b><span>Lavender Candle <i>24</i></span><span>Honey Soap <i>12</i></span><span>Beeswax Wrap <i>18</i></span><span>Lip Balm <i>8</i></span></div>
-        <div class="mini-phone"><b>Production</b><span>Lavender Candle</span><small>Planned 50</small><small>Completed 45</small><small>Wax used 10.5 kg</small></div>
-        <div class="mini-phone"><b>Expenses</b><span>Candle jars <i>$120</i></span><span>Soy wax <i>$45.60</i></span><span>Labels <i>$32</i></span><span>Shipping <i>$18.75</i></span></div>
+      <div class="screen-row maker-screen-row" aria-label="Interface concept previews">
+        <div class="mini-phone maker-mini-screen sale-screen">
+          <div class="mini-app-title"><span>🍀</span><b>New Sale</b><em>JD</em></div>
+          <small class="screen-label">Customer</small>
+          <span class="screen-field">Walk-in customer</span>
+          <small class="screen-label">Items</small>
+          <span>Lavender Candle <i>2 × $16</i></span>
+          <span>Honey Soap <i>1 × $8</i></span>
+          <span class="screen-total"><b>Total</b><i>$40.00</i></span>
+          <span class="screen-state">Payment <i>Partial · Cash</i></span>
+        </div>
+        <div class="mini-phone maker-mini-screen make-screen">
+          <div class="mini-app-title"><span>🍀</span><b>Make</b><em>JD</em></div>
+          <small class="screen-label">Product</small>
+          <span class="screen-field">Lavender Candle</span>
+          <span class="batch-pill">Batch MK26-0042</span>
+          <span class="can-make"><b>Can make</b><i>23</i></span>
+          <small>Wax <i>8.4 kg available</i></small>
+          <small>Jars <i>42 ea available</i></small>
+          <small>Wicks <i>31 ea available</i></small>
+          <span class="make-action">Make 12</span>
+        </div>
+        <div class="mini-phone maker-mini-screen report-screen">
+          <div class="mini-app-title"><span>🍀</span><b>2026 YTD</b><em>JD</em></div>
+          <strong class="ytd-total">$1,246.00</strong>
+          <small class="screen-label">Money received</small>
+          <span>Cash <i>$620</i></span>
+          <span>E-transfer <i>$410</i></span>
+          <span>Square <i>$216</i></span>
+          <small class="screen-label">Year totals</small>
+          <span>Taxes collected <i>$74.76</i></span>
+          <span>Outstanding <i>$86.00</i></span>
+        </div>
       </div>
     </section>
 
@@ -170,7 +208,8 @@
         <article class="price-card">
           <div><p class="plan-name">Free</p><h3>$0 <small>/ month</small></h3><p>Run your craft business.</p></div>
           <ul>
-            <li>1 user / 1 device</li>
+            <li>1 user / 1 device — hard limit</li>
+            <li>Cloud sync &amp; backup for that device</li>
             <li>Core materials, recipes &amp; production</li>
             <li>Inventory, orders, sales &amp; expenses</li>
             <li>Event &amp; market stock reservations</li>
@@ -185,7 +224,8 @@
           <div class="popular">Planned launch tier</div>
           <div><p class="plan-name">Maker</p><h3>$8.99 <small>/ month</small></h3><p>Understand and grow your craft business.</p></div>
           <ul>
-            <li>Up to 4 users / devices</li>
+            <li>Up to 4 users</li>
+            <li>Multiple authorized devices</li>
             <li>Cloud sync &amp; backup</li>
             <li>Customer-linked sales history &amp; analysis</li>
             <li>Order reminders</li>
@@ -202,7 +242,8 @@
         <table class="comparison-table">
           <thead><tr><th>Feature</th><th>Free</th><th>Maker</th></tr></thead>
           <tbody>
-            <tr><td>Users / devices</td><td>1</td><td>Up to 4</td></tr>
+            <tr><td>Users</td><td>1</td><td>Up to 4</td></tr>
+            <tr><td>Authorized devices</td><td>1</td><td>Multiple</td></tr>
             <tr><td>Core inventory, recipes, production, orders &amp; sales</td><td>Yes</td><td>Yes</td></tr>
             <tr><td>Event / market reservations</td><td>Yes</td><td>Yes</td></tr>
             <tr><td>Order reminders</td><td>—</td><td>Yes</td></tr>
@@ -212,7 +253,7 @@
             <tr><td>Order/payment analytics</td><td>Limited</td><td>Expanded</td></tr>
             <tr><td>Labour included in product cost</td><td>—</td><td>Manual input</td></tr>
             <tr><td>Tax reporting</td><td>1 basic summary</td><td>Full export package</td></tr>
-            <tr><td>Cloud sync / backup</td><td>—</td><td>Yes</td></tr>
+            <tr><td>Cloud sync / backup</td><td>Yes</td><td>Yes</td></tr>
           </tbody>
         </table>
       </div>

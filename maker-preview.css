@@ -1,0 +1,269 @@
+/* Product-direction concept previews.
+   These are deliberately stylized UI concepts, not claims of final app screenshots. */
+
+.maker-tablet{
+  padding:14px 16px 16px;
+  background:#f8fbfd;
+}
+.maker-app-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:10px 0 12px;
+}
+.maker-app-brand{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+.maker-app-brand>div{
+  display:grid;
+  line-height:1.05;
+}
+.maker-app-brand small{
+  color:var(--muted);
+  font-size:.58rem;
+  font-weight:750;
+}
+.maker-app-brand strong{
+  color:var(--navy);
+  font-size:1.2rem;
+  letter-spacing:-.025em;
+}
+.maker-leaf{
+  display:grid;
+  place-items:center;
+  width:34px;
+  height:34px;
+  background:#e7f5ea;
+  border:1px solid #cde8d3;
+  border-radius:11px;
+  font-size:1.25rem;
+}
+.maker-home-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:7px;
+}
+.maker-home-grid article{
+  min-width:0;
+  min-height:76px;
+  display:grid;
+  grid-template-columns:30px 1fr;
+  grid-template-rows:auto auto;
+  gap:1px 6px;
+  align-content:center;
+  padding:9px 8px;
+  border:1px solid #e2eaf0;
+  border-radius:11px;
+  background:#fff;
+  box-shadow:0 3px 9px rgba(16,42,67,.035);
+}
+.maker-home-grid article>span{
+  grid-row:1/3;
+  align-self:center;
+  display:grid;
+  place-items:center;
+  width:30px;
+  height:30px;
+  border-radius:9px;
+  background:#edf4f8;
+  color:var(--navy);
+  font-size:.51rem;
+  font-weight:950;
+}
+.maker-home-grid article>strong{
+  min-width:0;
+  color:var(--navy);
+  font-size:.66rem;
+  line-height:1.1;
+}
+.maker-home-grid article>small{
+  min-width:0;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  color:var(--muted);
+  font-size:.48rem;
+}
+.maker-home-grid article.attention>span{
+  background:#fff1c9;
+  color:#8c6300;
+  font-size:.8rem;
+}
+.maker-home-grid article.production>span{
+  background:#e7f5ea;
+  color:#2d7d46;
+}
+.stock-strip{
+  margin-top:8px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:7px;
+}
+.stock-strip>div{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:6px 9px;
+  border-radius:9px;
+  background:#eef4f7;
+}
+.stock-strip small{
+  color:var(--muted);
+  font-size:.49rem;
+  font-weight:800;
+}
+.stock-strip strong{
+  color:var(--navy);
+  font-size:.72rem;
+}
+.maker-phone .phone-tabs{
+  gap:4px;
+}
+.maker-phone .phone-tabs>*{
+  padding:4px 5px;
+  font-size:.52rem;
+}
+.maker-order-list li{
+  grid-template-columns:42px 1fr auto;
+  padding:8px 0;
+}
+.maker-order-list small{
+  font-size:.54rem;
+}
+.maker-screen-row{
+  align-items:center;
+}
+.maker-mini-screen{
+  position:relative;
+  min-height:355px;
+  background:#f8fbfd;
+  padding-top:17px;
+  gap:6px;
+}
+.maker-mini-screen:nth-child(2){
+  transform:translateY(-18px);
+}
+.mini-app-title{
+  display:grid;
+  grid-template-columns:22px 1fr auto;
+  align-items:center;
+  gap:5px;
+  padding:0 2px 9px;
+  border-bottom:1px solid var(--line);
+}
+.mini-app-title>span{
+  font-size:1rem;
+}
+.mini-app-title>b{
+  border:0;
+  padding:0;
+  font-size:.8rem;
+}
+.mini-app-title>em{
+  display:grid;
+  place-items:center;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:var(--navy);
+  color:#fff;
+  font-style:normal;
+  font-size:.5rem;
+  font-weight:900;
+}
+.maker-mini-screen .screen-label{
+  border:0;
+  padding:4px 3px 0;
+  color:var(--muted);
+  font-size:.55rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+.maker-mini-screen .screen-field{
+  background:#fff;
+  border:1px solid #e3eaf0;
+  border-radius:8px;
+  padding:7px;
+  font-weight:800;
+  color:var(--navy);
+}
+.maker-mini-screen .screen-total{
+  margin-top:auto;
+  background:#edf4f8;
+  border-radius:8px;
+  border:0;
+  padding:8px;
+}
+.maker-mini-screen .screen-state{
+  background:#fff6df;
+  border:1px solid #f0dfb4;
+  border-radius:8px;
+  padding:7px;
+}
+.batch-pill{
+  display:block!important;
+  border:0!important;
+  align-self:flex-start;
+  background:#edf4f8;
+  color:var(--navy);
+  border-radius:999px;
+  padding:5px 8px!important;
+  font-size:.61rem!important;
+  font-weight:900;
+}
+.can-make{
+  margin-top:4px;
+  background:#e7f5ea;
+  border:1px solid #cfe8d5!important;
+  border-radius:9px;
+  padding:8px!important;
+}
+.can-make i{
+  font-size:1.05rem;
+}
+.make-action{
+  margin-top:auto;
+  display:grid!important;
+  place-items:center;
+  border:0!important;
+  border-radius:9px;
+  padding:9px!important;
+  background:linear-gradient(135deg,var(--gold),#f1b72e);
+  color:#14283a;
+  font-weight:950;
+}
+.ytd-total{
+  display:block;
+  padding:11px 3px 8px;
+  color:var(--navy);
+  font-size:1.32rem;
+  border-bottom:1px solid var(--line);
+}
+.report-screen .screen-label{
+  margin-top:2px;
+}
+@media (max-width:1050px){
+  .maker-home-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .maker-home-grid article{
+    min-height:54px;
+  }
+  .maker-home-grid article:nth-child(n+7){
+    display:none;
+  }
+}
+@media (max-width:760px){
+  .maker-tablet .maker-home-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .maker-tablet .stock-strip{
+    display:none;
+  }
+  .maker-screen-row{
+    align-items:end;
+  }
+}
