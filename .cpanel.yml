@@ -9,6 +9,9 @@ deployment:
     - /bin/cp terms.html $DEPLOYPATH
     - /bin/cp styles.css $DEPLOYPATH
     - /bin/cp maker-preview.css $DEPLOYPATH
+    - /bin/cp maker-dashboard-preview.png $DEPLOYPATH
+    - /bin/cp maker-mobile-previews.png $DEPLOYPATH
+    - /bin/cp maker-preview.css $DEPLOYPATH
     - /bin/cp script.js $DEPLOYPATH
     - /bin/cp cloverbee-mark.png $DEPLOYPATH
     - /bin/cp robots.txt $DEPLOYPATH
