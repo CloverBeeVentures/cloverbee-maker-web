@@ -1,0 +1,13 @@
+Upload/overwrite these in the GitHub repo:
+- index.html
+- maker-preview.css
+- cloverbee-mark.png
+- maker-dashboard-preview.png
+- maker-mobile-previews.png
+
+Edit or overwrite .cpanel.yml so it also copies:
+- maker-preview.css
+- maker-dashboard-preview.png
+- maker-mobile-previews.png
+
+After commit/push, deploy in WHC cPanel Git Version Control.
