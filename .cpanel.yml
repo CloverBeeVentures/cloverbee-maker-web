@@ -8,6 +8,7 @@ deployment:
     - /bin/cp support.html $DEPLOYPATH
     - /bin/cp terms.html $DEPLOYPATH
     - /bin/cp styles.css $DEPLOYPATH
+    - /bin/cp maker-preview.css $DEPLOYPATH
     - /bin/cp script.js $DEPLOYPATH
     - /bin/cp cloverbee-mark.png $DEPLOYPATH
     - /bin/cp robots.txt $DEPLOYPATH
