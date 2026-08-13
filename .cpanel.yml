@@ -6,12 +6,14 @@ deployment:
     - /bin/cp 404.html $DEPLOYPATH
     - /bin/cp privacy.html $DEPLOYPATH
     - /bin/cp support.html $DEPLOYPATH
+    - /bin/cp beta.html $DEPLOYPATH
     - /bin/cp terms.html $DEPLOYPATH
     - /bin/cp styles.css $DEPLOYPATH
     - /bin/cp maker-preview.css $DEPLOYPATH
+    - /bin/cp beta-support.css $DEPLOYPATH
     - /bin/cp maker-dashboard-preview.png $DEPLOYPATH
     - /bin/cp maker-mobile-previews.png $DEPLOYPATH
-    - /bin/cp maker-preview.css $DEPLOYPATH
+    - /bin/cp forms.js $DEPLOYPATH
     - /bin/cp script.js $DEPLOYPATH
     - /bin/cp cloverbee-mark.png $DEPLOYPATH
     - /bin/cp robots.txt $DEPLOYPATH
