@@ -18,3 +18,4 @@ deployment:
     - /bin/cp sitemap.xml $DEPLOYPATH
     - /bin/mkdir -p $DEPLOYPATH/maker/privacy
     - /bin/cp maker/privacy/index.html $DEPLOYPATH/maker/privacy/index.html
+    - /bin/cp maker/privacy.html $DEPLOYPATH/maker/privacy.html
