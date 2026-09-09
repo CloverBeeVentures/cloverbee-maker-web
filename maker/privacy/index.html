@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Privacy Policy | CloverBee Maker</title>
+  <meta name="description" content="Privacy Policy for the CloverBee Maker mobile application and related services.">
+  <link rel="canonical" href="https://cloverbeemaker.ca/maker/privacy">
+  <link rel="icon" href="/cloverbee-mark.png">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .legal{max-width:860px;margin:auto}.legal h1{font-size:3rem;color:var(--navy)}.legal h2{color:var(--navy);margin-top:2rem}.legal h3{color:var(--navy);margin-top:1.4rem}.legal li{margin:.45rem 0}.legal .summary{font-size:1.08rem}.legal .note{padding:1rem 1.15rem;border:1px solid rgba(0,0,0,.12);border-radius:12px;background:rgba(255,255,255,.55)}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="/"><img src="/cloverbee-mark.png" alt="" width="54" height="54"><span class="brand-text"><strong>CloverBee</strong><em>Maker</em></span></a>
+  <nav class="site-nav" style="display:flex"><a href="/">Home</a><a href="/support.html">Support</a></nav>
+</header>
+
+<main class="section legal">
+  <p class="eyebrow">CloverBee Maker</p>
+  <h1>Privacy Policy</h1>
+  <p><strong>Effective and last updated: September 9, 2026.</strong></p>
+  <p class="summary">CloverBee Maker ("Maker") is a business-operations application provided by CloverBee Ventures ("CloverBee", "we", "us" or "our"). This policy explains what information Maker processes, why it is used, where it is processed, and the choices available to users.</p>
+
+  <div class="note"><strong>Short version:</strong> Maker uses account, business and device information to provide the service. Maker 1.0 does not contain advertising, does not sell personal or customer data, and does not use cross-app advertising tracking.</div>
+
+  <h2>1. Scope</h2>
+  <p>This policy applies to the CloverBee Maker mobile application and the cloud services used to operate it, including authentication, synchronization, storage, receipts, support, export and account administration. It also applies to information you send to us for Maker support or privacy requests.</p>
+  <p>The general CloverBee Maker marketing website has a separate website-focused privacy notice at <a href="/privacy.html">cloverbeemaker.ca/privacy.html</a>.</p>
+
+  <h2>2. Information Maker processes</h2>
+
+  <h3>Account and profile information</h3>
+  <p>When you create or use a Maker account, Maker may process information such as:</p>
+  <ul>
+    <li>email address and account/authentication identifiers;</li>
+    <li>your name and business role;</li>
+    <li>business membership and permission information;</li>
+    <li>account, session, verification and authentication status; and</li>
+    <li>account-deletion, recovery or other account-administration records.</li>
+  </ul>
+  <p>Authentication is provided through Supabase Auth. Authentication secrets are handled through that authentication system; CloverBee does not need or intend to store readable account passwords in Maker business records.</p>
+
+  <h3>Business information you enter</h3>
+  <p>Maker is designed to store records for the business using the app. Depending on the features you use, those records may include:</p>
+  <ul>
+    <li>business name, contact information, address, country/region, currency, time zone, fiscal settings and tax settings;</li>
+    <li>customer and supplier names, email addresses, phone numbers, addresses, notes and related records when you choose to enter them;</li>
+    <li>products, variants, materials, recipes, inventory, production and batch records;</li>
+    <li>purchases, expenses, costs and inventory movements;</li>
+    <li>sales, orders, fulfillment, prices, discounts, taxes, charges and payment records;</li>
+    <li>receipt information and receipt-contact information;</li>
+    <li>business notes and other text you choose to enter; and</li>
+    <li>files, images, receipts or attachments you choose to upload where an upload feature is available.</li>
+  </ul>
+  <p>Payment records in Maker may include items such as payment method, amount, status and references needed for business records. Maker 1.0 is not a payment-card processor and is not intended to collect full card numbers, CVV codes or similar payment credentials. Do not place sensitive payment credentials in free-text notes or attachments.</p>
+
+  <h3>Device, synchronization and security information</h3>
+  <p>Maker uses device authorization and offline synchronization. To provide those functions, Maker may process:</p>
+  <ul>
+    <li>app-generated device identifiers and device authorization status;</li>
+    <li>business and user identifiers associated with an authorized device;</li>
+    <li>record identifiers, synchronization sequence information, timestamps, retries and outbox state;</li>
+    <li>security and audit information used to validate access and investigate abnormal activity; and</li>
+    <li>ordinary network and service logs, which may include IP address, request timestamps and technical request information.</li>
+  </ul>
+
+  <h3>Support and feedback</h3>
+  <p>If you contact CloverBee for support, feedback or a privacy request, we process the information you provide in that communication. We may also use relevant account, app-version, synchronization or error context when necessary to diagnose a problem. We do not need customer, sale or recipe contents for ordinary diagnostics unless you deliberately provide them or they are specifically required to investigate an issue.</p>
+
+  <h2>3. How we use information</h2>
+  <p>We process information to:</p>
+  <ul>
+    <li>create, authenticate and administer Maker accounts;</li>
+    <li>create and operate business workspaces;</li>
+    <li>authorize users and devices;</li>
+    <li>store, synchronize and recover business records across authorized use;</li>
+    <li>provide products, inventory, production, sales, orders, receipts, reports and export functions;</li>
+    <li>provide customer support and troubleshoot technical problems;</li>
+    <li>protect Maker, its users and business data from unauthorized access, abuse or security incidents;</li>
+    <li>maintain service reliability and backups; and</li>
+    <li>meet legal, accounting, security or regulatory obligations that apply to CloverBee.</li>
+  </ul>
+  <p>Receipt contact information is used to provide the requested receipt-related function. Entering an email address or phone number for a receipt does not automatically subscribe that person to marketing.</p>
+
+  <h2>4. Local storage and cloud processing</h2>
+  <p>Maker is designed to work offline. Business data may be stored in a local SQLite database on an authorized device and synchronized when a network connection is available.</p>
+  <p>Maker also uses cloud infrastructure to operate the service:</p>
+  <ul>
+    <li><strong>Supabase</strong> provides authentication, PostgreSQL database services and file storage used by Maker.</li>
+    <li><strong>Render</strong> hosts the FastAPI service that acts as Maker's trusted application, authorization and synchronization gateway.</li>
+  </ul>
+  <p>These providers process information on CloverBee's behalf as necessary to provide their infrastructure services. Data may be processed or stored in jurisdictions outside your province, state or country depending on provider infrastructure and service configuration, and may therefore be subject to the laws of those jurisdictions.</p>
+
+  <h2>5. Sharing and disclosure</h2>
+  <p>We do not sell personal information or customer data. We do not disclose Maker business data to third parties for their own advertising purposes.</p>
+  <p>Information may be disclosed only as reasonably necessary:</p>
+  <ul>
+    <li>to infrastructure and service providers that operate Maker for us;</li>
+    <li>at your direction, for example when you export, share or send a receipt or business record;</li>
+    <li>to investigate security incidents, fraud, abuse or threats to the service; or</li>
+    <li>when required by applicable law, legal process or a valid government request.</li>
+  </ul>
+
+  <h2>6. Advertising and tracking</h2>
+  <p>Maker 1.0 does not contain advertising. CloverBee does not use Maker data for cross-app advertising tracking and does not sell personal or customer data.</p>
+  <p>If Maker later adds a feature that materially changes these practices, this policy and any required platform privacy disclosures will be updated before that feature is relied upon.</p>
+
+  <h2>7. Security and business separation</h2>
+  <p>Maker is designed with business-level authorization controls. Normal business operations pass through the FastAPI service, which validates the signed-in account, active business membership, role and authorized-device status. The Supabase database also uses row-level security as an additional tenant-separation control.</p>
+  <p>We use technical and administrative safeguards intended to protect Maker data, but no application, device, network or cloud service can guarantee absolute security. Maker is not designed as end-to-end encrypted storage from the service operator: the service infrastructure must be able to process business data to provide Maker's functions.</p>
+  <p>You are responsible for protecting access to your device, email account and Maker login and for limiting access to authorized people.</p>
+
+  <h2>8. Retention, account deletion and recovery</h2>
+  <p>While a Maker business is active, its normal operating data is retained so the service can provide synchronization, history, reporting, tax records and other business functions. Subscription cancellation or a future plan downgrade is not the same as deleting business data.</p>
+  <p>Maker provides an account/business deletion process with a recovery period:</p>
+  <ul>
+    <li><strong>Day 0:</strong> an authorized owner requests deletion after the required confirmation and reauthentication. The business enters a deletion-pending state.</li>
+    <li><strong>Days 0-30:</strong> the business is recoverable and read-only. The owner can export data or cancel deletion. Staff/administrator access is disabled and new business writes/uploads are blocked.</li>
+    <li><strong>At approximately Day 30:</strong> active Maker business data is permanently removed from the active service and is no longer recoverable through Maker.</li>
+    <li><strong>Up to approximately Day 60:</strong> secure residual backup copies may remain until they expire through the normal backup-retention process.</li>
+  </ul>
+  <p>Limited records may be retained longer where reasonably required for CloverBee's legal, accounting, fraud-prevention or security obligations. Such retention is not intended to preserve the normal deleted operating dataset.</p>
+  <p>If an account is associated with business ownership, deletion must respect the ownership and business-deletion safeguards built into Maker. This prevents an owner action from silently orphaning or bypassing the business's retained records.</p>
+
+  <h2>9. Access, correction and export</h2>
+  <p>Maker users can view and edit many account and business records directly in the app according to their permissions. Maker also provides data-export functions so a business can obtain its own records. Export may include structured and human-readable business records and, where applicable, uploaded attachments.</p>
+  <p>For help accessing, correcting, exporting or deleting information, contact us using the address below. We may need to verify your identity and authority over the relevant account or business before acting on a request.</p>
+
+  <h2>10. Your customers' information</h2>
+  <p>A business using Maker may enter information about its own customers, suppliers, employees or other contacts. In that situation, the Maker business user decides what information to enter and why it is needed for that business. Users are responsible for using Maker in a manner consistent with the privacy and record-keeping obligations that apply to their own business.</p>
+
+  <h2>11. Changes to this policy</h2>
+  <p>We may update this policy as Maker changes. Material changes will be reflected by updating the date at the top of this page and, when appropriate, by providing additional notice in Maker or through another reasonable channel.</p>
+
+  <h2>12. Contact</h2>
+  <p>Questions, access requests, deletion questions or other privacy concerns about Maker can be sent to:</p>
+  <p><a href="mailto:developer@cloverbeemaker.ca"><strong>developer@cloverbeemaker.ca</strong></a></p>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-brand"><img src="/cloverbee-mark.png" alt="" width="48" height="48"><div><strong>CloverBee Maker</strong><span>Business tools for makers</span></div></div>
+  <nav><a href="/">Home</a><a href="/terms.html">Terms</a><a href="/support.html">Support</a></nav>
+  <div class="footer-contact"><a href="mailto:developer@cloverbeemaker.ca">developer@cloverbeemaker.ca</a></div>
+</footer>
+</body>
+</html>
