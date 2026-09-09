@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Changelog | Maker by CloverBee</title>
+  <meta name="description" content="Version history and release notes for Maker by CloverBee on iOS and Android.">
+  <meta name="theme-color" content="#102a43">
+  <link rel="icon" href="cloverbee-mark.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="changelog.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Maker by CloverBee home">
+      <img src="cloverbee-mark.png" alt="" width="54" height="54">
+      <span class="brand-text"><strong>Maker</strong><em>by CloverBee</em></span>
+    </a>
+    <nav class="mini-nav" aria-label="Changelog navigation">
+      <a href="index.html">Home</a>
+      <a href="support.html">Support</a>
+      <a href="/maker/privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main class="section changelog-page">
+    <div class="changelog-intro">
+      <p class="eyebrow">Version history</p>
+      <h1>Maker changelog</h1>
+      <p>Release notes for Maker across supported platforms. Public app versions use semantic version numbers such as <strong>v1.0.0</strong>. Pre-release builds append a release-candidate label such as <strong>RC1</strong>. GitHub pull-request numbers stay internal and are not used as product release names.</p>
+    </div>
+
+    <div class="platform-filter" role="group" aria-label="Filter releases by platform">
+      <button type="button" class="filter-button active" data-platform="all" aria-pressed="true">All</button>
+      <button type="button" class="filter-button" data-platform="ios" aria-pressed="false">iOS</button>
+      <button type="button" class="filter-button" data-platform="android" aria-pressed="false">Android</button>
+    </div>
+
+    <section class="release-list" aria-live="polite">
+      <article class="release-card" data-platform="ios">
+        <div class="release-topline">
+          <div>
+            <p class="release-version">v1.0.0 RC1</p>
+            <h2>First iOS release candidate</h2>
+          </div>
+          <div class="release-badges" aria-label="Release metadata">
+            <span class="platform-badge ios">iOS</span>
+            <span class="status-badge pending">TestFlight review pending</span>
+          </div>
+        </div>
+        <div class="release-meta">
+          <span>September 9, 2026</span>
+          <span>Build 1</span>
+          <span>Version 1.0.0</span>
+        </div>
+        <p class="release-summary">The first Apple-distributed Maker build has been uploaded through the production signing pipeline and submitted for external TestFlight Beta App Review.</p>
+        <h3>Included in this candidate</h3>
+        <ul>
+          <li>Products, materials, recipes, production and inventory workflows.</li>
+          <li>Customers, orders, sales, payments, expenses and reports.</li>
+          <li>Offline-first local storage with cloud synchronization when a connection is available.</li>
+          <li>Dark mode, account recovery, export and recoverable account deletion.</li>
+          <li>Free 1.0 launch configuration with no advertising or in-app purchases.</li>
+        </ul>
+        <p class="release-note"><strong>Status:</strong> Awaiting Apple Beta App Review before the first external tester round. A final public release candidate will follow physical iPhone testing and any verified fixes.</p>
+      </article>
+
+      <p class="empty-state" hidden>No releases match this platform yet.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <img src="cloverbee-mark.png" alt="" width="48" height="48">
+      <div><strong>Maker by CloverBee</strong><span>Version history</span></div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="support.html">Support</a>
+      <a href="beta.html">Beta</a>
+      <a href="/maker/privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <div class="footer-contact"><a href="mailto:developer@cloverbeemaker.ca">developer@cloverbeemaker.ca</a></div>
+  </footer>
+
+  <script src="changelog.js"></script>
+</body>
+</html>
