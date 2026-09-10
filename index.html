@@ -11,8 +11,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cloverbeemaker.ca/">
   <link rel="icon" href="cloverbee-mark.png">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="maker-preview.css">
+  <link rel="stylesheet" href="styles.css?v=20260910c">
+  <link rel="stylesheet" href="maker-preview.css?v=20260910c">
 </head>
 <body>
 <header class="site-header">
@@ -233,16 +233,65 @@
       <p>Optional Maker Modules will add specialized tools for businesses that need more, without crowding the core app for everyone else.</p>
       <p class="fine-print">Specific modules, availability and pricing will be announced as they are ready.</p>
     </div>
-    <div class="module-graphic" aria-hidden="true">
-        <span class="module-orbit module-orbit-a"><i></i><i></i><i></i></span>
-        <span class="module-orbit module-orbit-b"><i></i><i></i></span>
-        <div class="module-tile module-tile-top"><span class="module-mini-grid"><i></i><i></i><i></i><i></i></span></div>
-        <div class="module-tile module-tile-right"><span class="module-mini-bars"><i></i><i></i><i></i></span></div>
-        <div class="module-tile module-tile-bottom"><span class="module-mini-box"></span></div>
-        <div class="module-tile module-tile-left"><span class="module-mini-clock"></span></div>
-        <div class="module-core"><img src="cloverbee-mark.png" alt=""><b>+</b></div>
-        <span class="module-spark spark-a"></span><span class="module-spark spark-b"></span><span class="module-spark spark-c"></span>
-      </div>
+    <div class="module-graphic" aria-hidden="true" style="max-width:340px;width:100%;margin-inline:auto">
+      <svg viewBox="0 0 340 260" width="100%" role="img" aria-label="" style="display:block;overflow:visible">
+        <defs>
+          <filter id="moduleShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#3B2A22" flood-opacity=".16"/>
+          </filter>
+        </defs>
+
+        <path d="M93 72 C126 39 205 36 244 72" fill="none" stroke="#0A6739" stroke-width="5" stroke-linecap="round" opacity=".55"/>
+        <path d="M76 178 C115 218 221 222 268 166" fill="none" stroke="#C96A2B" stroke-width="5" stroke-linecap="round" opacity=".45"/>
+        <path d="M76 86 C44 118 47 156 72 180" fill="none" stroke="#0A6739" stroke-width="5" stroke-linecap="round" opacity=".35"/>
+        <path d="M263 80 C299 111 298 148 270 170" fill="none" stroke="#0A6739" stroke-width="5" stroke-linecap="round" opacity=".35"/>
+
+        <g filter="url(#moduleShadow)">
+          <g transform="translate(55 35) rotate(-8 35 35)">
+            <rect width="70" height="70" rx="20" fill="#FFF8EC" stroke="#DDD2C6"/>
+            <rect x="16" y="14" width="38" height="41" rx="8" fill="#DDE9DF"/>
+            <rect x="16" y="14" width="38" height="12" rx="6" fill="#C96A2B"/>
+            <rect x="21" y="33" width="8" height="8" rx="2" fill="#3B2A22"/><rect x="34" y="33" width="8" height="8" rx="2" fill="#3B2A22"/><rect x="47" y="33" width="4" height="8" rx="2" fill="#3B2A22"/>
+          </g>
+
+          <g transform="translate(227 39) rotate(8 35 35)">
+            <rect width="70" height="70" rx="20" fill="#FFF8EC" stroke="#DDD2C6"/>
+            <rect x="15" y="16" width="40" height="36" rx="8" fill="#DDE9DF" stroke="#0A6739" stroke-width="4"/>
+            <path d="M24 44 L32 35 L39 39 L49 26" fill="none" stroke="#C96A2B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+
+          <g transform="translate(36 151) rotate(7 35 35)">
+            <rect width="70" height="70" rx="20" fill="#FFF8EC" stroke="#DDD2C6"/>
+            <circle cx="35" cy="35" r="20" fill="#DDE9DF" stroke="#0A6739" stroke-width="4"/>
+            <path d="M35 23 V36 L45 42" fill="none" stroke="#3B2A22" stroke-width="5" stroke-linecap="round"/>
+          </g>
+
+          <g transform="translate(239 154) rotate(-7 35 35)">
+            <rect width="70" height="70" rx="20" fill="#FFF8EC" stroke="#DDD2C6"/>
+            <path d="M16 31 H54 L49 52 H21 Z" fill="#DDE9DF" stroke="#0A6739" stroke-width="3"/>
+            <path d="M19 31 L24 20 H46 L51 31" fill="#C96A2B"/>
+            <path d="M26 52 V38 H38 V52" fill="#3B2A22"/>
+          </g>
+
+          <g transform="translate(117 82)">
+            <rect width="106" height="106" rx="30" fill="#FFF8EC" stroke="#DDD2C6" stroke-width="2"/>
+            <circle cx="53" cy="53" r="39" fill="#DDE9DF"/>
+            <image href="cloverbee-mark.png" x="23" y="23" width="60" height="60" preserveAspectRatio="xMidYMid meet"/>
+            <circle cx="88" cy="88" r="19" fill="#C96A2B" stroke="#FFF8EC" stroke-width="5"/>
+            <path d="M88 78 V98 M78 88 H98" stroke="#FFF8EC" stroke-width="5" stroke-linecap="round"/>
+          </g>
+        </g>
+
+        <g fill="#C96A2B">
+          <rect x="305" y="94" width="8" height="25" rx="4" transform="rotate(52 309 107)"/>
+          <rect x="289" y="77" width="8" height="18" rx="4" transform="rotate(28 293 86)"/>
+          <rect x="18" y="109" width="8" height="22" rx="4" transform="rotate(-53 22 120)"/>
+        </g>
+        <g fill="#0A6739">
+          <circle cx="318" cy="143" r="6"/><circle cx="22" cy="151" r="6"/>
+        </g>
+      </svg>
+    </div>
   </section>
 
   <section class="section mobile-section">
