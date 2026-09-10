@@ -22,5 +22,9 @@ deployment:
     - /bin/mkdir -p $DEPLOYPATH/maker/privacy
     - /bin/cp maker/privacy/index.html $DEPLOYPATH/maker/privacy/index.html
     - /bin/cp maker/privacy.html $DEPLOYPATH/maker/privacy.html
+    - /bin/mkdir -p $DEPLOYPATH/guide
+    - /bin/cp guide/index.html $DEPLOYPATH/guide/index.html
+    - /bin/mkdir -p $DEPLOYPATH/how-maker-works
+    - /bin/cp how-maker-works/index.html $DEPLOYPATH/how-maker-works/index.html
     - /bin/mkdir -p $DEPLOYPATH/card
     - /bin/cp card/index.html $DEPLOYPATH/card/index.html
