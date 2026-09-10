@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>How Maker Works | CloverBee Maker</title>
+  <meta name="description" content="Plain-language explanations of CloverBee Maker costing, inventory, order, tax, expense attribution and reporting logic.">
+  <meta name="theme-color" content="#3B2A22">
+  <link rel="canonical" href="https://cloverbeemaker.ca/how-maker-works/">
+  <link rel="icon" href="/cloverbee-mark.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="/" aria-label="CloverBee Maker home"><img src="/cloverbee-mark.png" alt="" width="54" height="54"><span class="brand-text"><strong>CloverBee</strong><em>Maker</em></span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <nav id="site-nav" class="site-nav" aria-label="Primary navigation"><a href="/guide/">Maker Guide</a><a href="/#features">Features</a><a href="/#pricing">Pricing</a><a href="/support.html">Support</a><a class="button button-small" href="/">Maker home</a></nav>
+</header>
+<main>
+  <section class="section guide-hero">
+    <p class="eyebrow">Plain-language explanations</p>
+    <h1>How Maker Works</h1>
+    <p class="guide-lead">Maker should never make you guess where a number came from. These explanations document the assumptions and calculations behind the app.</p>
+    <div class="guide-note"><strong>In the app:</strong> look for the information icon beside non-obvious values. It gives the one-sentence version and links here when more detail is useful.</div>
+  </section>
+
+  <section class="section logic-index alt-surface">
+    <div class="logic-links">
+      <a href="#material-cost">Material costing</a><a href="#inventory">Inventory &amp; reservations</a><a href="#orders">Orders, sales &amp; payments</a><a href="#tax">Tax records</a><a href="#expenses">Expense categories</a><a href="#linked-expenses">Linked expenses</a><a href="#labour">Labour &amp; return/hour</a><a href="#data">Data &amp; downgrades</a>
+    </div>
+  </section>
+
+  <section class="section logic-articles">
+    <article id="material-cost" class="logic-card">
+      <span class="guide-tag">Free + Paid</span><h2>Material costing</h2>
+      <p><strong>Short version:</strong> Maker uses the quantities and costs you enter for materials to calculate what a Recipe and finished unit cost from materials.</p>
+      <h3>Current material cost</h3><p>When material is received with a known cost, Maker combines the known quantities and costs using weighted-average costing. If some required input cost is unknown, Maker keeps the resulting cost unknown rather than pretending the missing input cost is zero.</p>
+      <h3>Recipe and unit cost</h3><p>For each Recipe input, Maker multiplies the quantity required by the current known material unit cost. Those input costs are added to produce the known material cost for one finished unit.</p>
+      <div class="formula">Material cost per finished unit = Σ (material quantity × current material unit cost)</div>
+      <h3>Historical production</h3><p>A completed Make run snapshots the Recipe version, material quantities and known costs used at that time. Later Recipe edits or new purchase prices do not rewrite old production history.</p>
+      <p class="fine-print">Material costing is an operational/economic record, not a tax or accounting opinion.</p>
+    </article>
+
+    <article id="inventory" class="logic-card">
+      <span class="guide-tag">Free + Paid</span><h2>Inventory &amp; reservations</h2>
+      <p><strong>Short version:</strong> On Hand is physical stock, Reserved is undelivered committed demand, and Available is what remains after reservations.</p>
+      <div class="formula">Available = On Hand − Reserved</div>
+      <p>Maker keeps inventory as a movement history rather than treating the current quantity as an isolated number. Receiving adds stock; production consumes materials and adds finished goods; sales consume finished goods; a stocktake records the difference between the expected quantity and the physical count.</p>
+      <p>Available may become negative when committed demand exceeds physical stock. That is intentional: it exposes the shortage instead of hiding it. Offline work that later conflicts with another device may also reveal a shortage when synchronized.</p>
+    </article>
+
+    <article id="orders" class="logic-card">
+      <span class="guide-tag">Free + Paid</span><h2>Orders, sales &amp; payments</h2>
+      <p><strong>Short version:</strong> delivery determines whether product is a sale; payment is tracked separately.</p>
+      <p>An undelivered commitment is an <strong>Order</strong>. Once product is delivered, that delivered quantity is <strong>Sale</strong> history even if money is still owing. This is why Maker can represent paid-but-undelivered and delivered-but-unpaid work without forcing either one into the wrong status.</p>
+      <p>Payments are ledger entries. Paid, Partial and Unpaid are calculated from payment/refund totals rather than stored as a single editable status. This supports deposits, partial payments and later refunds without rewriting history.</p>
+    </article>
+
+    <article id="tax" class="logic-card">
+      <span class="guide-tag">Free + Paid</span><h2>Tax records</h2>
+      <p><strong>Short version:</strong> Maker totals the tax rules and recoverability choices you configure; it does not decide the legal tax treatment for you.</p>
+      <p>Completed transactions snapshot the tax name, rate, taxable amount and actual tax amount used at the time. Changing a tax rate later does not rewrite historical transactions.</p>
+      <p>Expense categories can supply default recoverable/claimable treatment for each configured tax type. You can override that default on an individual transaction when the source document or treatment differs.</p>
+      <p>Free and Paid both retain core tax visibility such as tax collected and tax paid by configured tax type. Paid adds deeper filtering, supporting-document access and purpose-specific exports.</p>
+      <p class="fine-print">Maker organizes records and totals. It does not determine whether a tax is legally recoverable, deductible or payable, and it does not provide tax advice.</p>
+    </article>
+
+    <article id="expenses" class="logic-card">
+      <span class="guide-tag">Free + Paid</span><h2>Expense categories</h2>
+      <p><strong>Short version:</strong> category names organize reporting, while Maker keeps the underlying economic treatment stable so renaming a category does not break costing.</p>
+      <p>Free uses three standard categories: Recipe / production input, Business expense, and Marketing &amp; selling. Paid begins with the same structure but can rename those categories, add more, create one level of subcategories and archive categories no longer in use.</p>
+      <p>Historical transactions keep their historical category attribution. Renaming or archiving a category is not allowed to silently change the meaning of old records.</p>
+    </article>
+
+    <article id="linked-expenses" class="logic-card">
+      <span class="guide-tag">Paid</span><h2>Linked expenses: attribution, not allocation</h2>
+      <p><strong>Short version:</strong> linking an expense to a Product or Product Family means the expense supported that product; it does not duplicate the expense in the business ledger.</p>
+      <p>Suppose one $100 mould is used for both candles and soaps. In a <strong>Full linked cost</strong> view, the mould can appear as $100 when looking at Candles and $100 when looking at Soaps because the whole mould is required by each family. Those attributed totals overlap and are not additive. The business still spent $100 once.</p>
+      <p>A report can optionally use <strong>Split shared costs evenly</strong>. With two linked targets, the same $100 mould would appear as $50 in each analytical view. This changes only the report lens; it never rewrites the original expense or business ledger.</p>
+      <p>General overhead is not automatically spread across products. Rent, insurance, software and similar costs remain business-wide unless the user deliberately links them.</p>
+    </article>
+
+    <article id="labour" class="logic-card">
+      <span class="guide-tag">Paid</span><h2>Labour and effective return per hour</h2>
+      <p><strong>Short version:</strong> Maker can use Recipe labour time to show what the current selling price leaves for labour after known direct material cost.</p>
+      <div class="formula">Effective labour return = (sale price − direct material cost) ÷ labour hours</div>
+      <p>If a product sells for $5, uses $2 of direct materials and takes 15 minutes to make, the amount remaining after materials is $3. At four units' worth of production time per hour, that implies an effective labour return of $12/hour.</p>
+      <p>If you enter an optional target hourly rate, Maker can also calculate the target labour cost and compare the resulting contribution with that target. Maker reports the data; it does not tell you to raise or lower your price.</p>
+      <p class="fine-print">Where overhead or other costs are not included, Maker uses terms such as contribution and effective labour return rather than calling the result absolute net profit.</p>
+    </article>
+
+    <article id="data" class="logic-card">
+      <span class="guide-tag">Free + Paid</span><h2>Your data, plan changes and exports</h2>
+      <p><strong>Short version:</strong> changing plans does not erase historical business records.</p>
+      <p>Free and Paid both retain access to a fundamental business-data export for portability and privacy. Paid adds convenient purpose-specific exports and can retain supporting invoice/receipt attachments.</p>
+      <p>If a business downgrades, paid-only creation or editing capabilities may lock, but historical records, custom categories, links and existing attachments are preserved rather than deleted simply because the subscription changed.</p>
+    </article>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-brand"><img src="/cloverbee-mark.png" alt="" width="48" height="48"><div><strong>CloverBee Maker</strong><span>Run the business behind what you make.</span></div></div>
+  <nav><a href="/">Home</a><a href="/guide/">Maker Guide</a><a href="/#pricing">Pricing</a><a href="/support.html">Support</a><a href="/maker/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+  <div class="footer-contact"><a href="mailto:developer@cloverbeemaker.ca">developer@cloverbeemaker.ca</a><span>© 2026 CloverBee Maker.</span></div>
+</footer>
+<script src="/script.js"></script>
+</body></html>
