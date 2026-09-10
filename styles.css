@@ -121,5 +121,6 @@ body{background:var(--cream)}
 .story-copy p:not(.eyebrow){color:var(--muted);font-size:1.02rem;margin:0 0 14px}
 .story-copy p:last-child{margin-bottom:0}
 .story-copy strong{color:var(--navy)}
+.story-copy a{color:var(--green);font-weight:750;text-decoration:underline;text-underline-offset:3px}.story-copy a:hover{color:var(--gold-deep)}
 @media(max-width:980px){.story-section{grid-template-columns:1fr}.story-visual{min-height:240px}}
 @media(max-width:650px){.story-section{gap:34px}.story-visual{min-height:210px;padding:28px}.story-visual img{width:92px;height:92px}}
