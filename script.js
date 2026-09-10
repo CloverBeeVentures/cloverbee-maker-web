@@ -1,2 +1,49 @@
-const toggle=document.querySelector('.nav-toggle');const nav=document.querySelector('.site-nav');if(toggle&&nav){toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));}
-document.querySelectorAll('a[href="privacy.html"]').forEach(a=>{a.href='/maker/privacy.html';});document.title='Maker by CloverBee | Run the business behind what you make';document.querySelectorAll('.brand-text').forEach(el=>{el.innerHTML='<strong>Maker</strong><em>by CloverBee</em>';});document.querySelectorAll('.footer-brand strong').forEach(el=>{el.textContent='Maker by CloverBee';});if(nav&&!nav.querySelector('a[href="beta.html"]')){const support=nav.querySelector('a[href="support.html"]');const beta=document.createElement('a');beta.href='beta.html';beta.textContent='Beta';nav.insertBefore(beta,support||null);}if(nav&&!nav.querySelector('a[href="changelog.html"]')){const support=nav.querySelector('a[href="support.html"]');const changelog=document.createElement('a');changelog.href='changelog.html';changelog.textContent='Changelog';nav.insertBefore(changelog,support||null);}document.querySelectorAll('.site-footer nav').forEach(footerNav=>{if(!footerNav.querySelector('a[href="changelog.html"]')){const changelog=document.createElement('a');changelog.href='changelog.html';changelog.textContent='Changelog';const terms=footerNav.querySelector('a[href="terms.html"]');footerNav.insertBefore(changelog,terms||null);}});document.querySelectorAll('a[href^="mailto:developer@cloverbeemaker.ca"][href*="Early%20Access"],a[href^="mailto:developer@cloverbeemaker.ca"][href*="Free%20Early%20Access"],a[href^="mailto:developer@cloverbeemaker.ca"][href*="Paid%20Early%20Access"]').forEach(a=>{a.href='beta.html';a.textContent='Join the Beta';});const cards=document.querySelectorAll('.price-card');if(cards.length>=2){const free=cards[0],paid=cards[1],fl=free.querySelector('ul'),pl=paid.querySelector('ul');if(fl&&!fl.textContent.includes('100 MB')){const li=document.createElement('li');li.textContent='100 MB file storage';fl.appendChild(li);}const pn=paid.querySelector('.plan-name');if(pn)pn.textContent='Maker Paid';const pp=paid.querySelector('h3');if(pp)pp.innerHTML='$8.99 <small>/ month</small>';if(pl&&!pl.textContent.includes('1 GB')){const li=document.createElement('li');li.textContent='1 GB file storage';pl.appendChild(li);}const pop=paid.querySelector('.popular');if(pop)pop.textContent='Paid';paid.querySelector('.launch-price-note')?.remove();}document.querySelectorAll('.comparison-table th').forEach(th=>{if(th.textContent.trim()==='Maker')th.textContent='Paid tier 1';});const cb=document.querySelector('.comparison-table tbody');if(cb&&!cb.textContent.includes('File storage')){const tr=document.createElement('tr');tr.innerHTML='<td>File storage</td><td>100 MB</td><td>1 GB</td>';cb.appendChild(tr);}const fc=document.querySelector('.final-cta .button');if(fc){fc.href='beta.html';fc.textContent='Join the Beta';}const heroActions=document.querySelector('.hero-copy .hero-actions');const storeComing=document.querySelector('.store-coming');const storeNote=document.querySelector('.store-note');if(heroActions&&storeComing){heroActions.insertAdjacentElement('afterend',storeComing);if(storeNote)storeComing.insertAdjacentElement('afterend',storeNote);}
+const toggle=document.querySelector('.nav-toggle');
+const nav=document.querySelector('.site-nav');
+const resourceToggle=document.querySelector('.nav-dropdown-toggle');
+const resourceMenu=document.querySelector('.nav-dropdown');
+
+if(toggle&&nav){
+  toggle.addEventListener('click',()=>{
+    const open=nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded',String(open));
+  });
+}
+
+if(resourceToggle&&resourceMenu){
+  resourceToggle.addEventListener('click',(event)=>{
+    event.stopPropagation();
+    const open=resourceMenu.classList.toggle('open');
+    resourceToggle.setAttribute('aria-expanded',String(open));
+  });
+  document.addEventListener('click',()=>{
+    resourceMenu.classList.remove('open');
+    resourceToggle.setAttribute('aria-expanded','false');
+  });
+}
+
+if(nav){
+  nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+    nav.classList.remove('open');
+    toggle?.setAttribute('aria-expanded','false');
+    resourceMenu?.classList.remove('open');
+    resourceToggle?.setAttribute('aria-expanded','false');
+  }));
+}
+
+document.querySelectorAll('a[href="privacy.html"]').forEach(a=>{a.href='/maker/privacy.html';});
+
+document.querySelectorAll(
+  'a[href^="mailto:developer@cloverbeemaker.ca"][href*="Early%20Access"],a[href^="mailto:developer@cloverbeemaker.ca"][href*="Free%20Early%20Access"],a[href^="mailto:developer@cloverbeemaker.ca"][href*="Paid%20Early%20Access"]'
+).forEach(a=>{a.href='/beta.html';a.textContent='Join the Beta';});
+
+const fc=document.querySelector('.final-cta .button');
+if(fc&&fc.getAttribute('href')?.includes('Early%20Access')){fc.href='/beta.html';fc.textContent='Join the Beta';}
+
+const heroActions=document.querySelector('.hero-copy .hero-actions');
+const storeComing=document.querySelector('.store-coming');
+const storeNote=document.querySelector('.store-note');
+if(heroActions&&storeComing){
+  heroActions.insertAdjacentElement('afterend',storeComing);
+  if(storeNote)storeComing.insertAdjacentElement('afterend',storeNote);
+}
