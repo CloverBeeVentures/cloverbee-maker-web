@@ -10,9 +10,41 @@
   <meta property="og:description" content="Run the business behind what you make. Inventory, production, orders, sales, expenses, costing and tax-ready records for small makers.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cloverbeemaker.ca/">
+  <meta property="og:image" content="https://cloverbeemaker.ca/cloverbee-mark.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CloverBee Maker">
+  <meta name="twitter:description" content="Run the business behind what you make.">
+  <link rel="canonical" href="https://cloverbeemaker.ca/">
   <link rel="icon" href="cloverbee-mark.png">
   <link rel="stylesheet" href="styles.css?v=20260910c">
   <link rel="stylesheet" href="maker-preview.css?v=20260910c">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"CloverBee Maker",
+    "applicationCategory":"BusinessApplication",
+    "operatingSystem":"iOS, Android",
+    "url":"https://cloverbeemaker.ca/",
+    "description":"Business operations software for small-batch makers: materials, recipes, production, inventory, orders, sales, expenses, costing and tax-ready records.",
+    "offers":[
+      {"@type":"Offer","name":"Free","price":"0","priceCurrency":"CAD"},
+      {"@type":"Offer","name":"Maker Paid Monthly","price":"8.99","priceCurrency":"CAD"},
+      {"@type":"Offer","name":"Maker Paid Annual","price":"89.99","priceCurrency":"CAD"}
+    ],
+    "publisher":{
+      "@type":"Organization",
+      "name":"CloverBee Ventures",
+      "url":"https://cloverbeemaker.ca/",
+      "sameAs":[
+        "https://www.instagram.com/cloverbeemaker/",
+        "https://www.facebook.com/1289706744227056",
+        "https://www.pinterest.com/cloverbeemaker/",
+        "https://www.threads.net/@cloverbeemaker"
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
 <header class="site-header">
@@ -24,9 +56,15 @@
   <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
     <a href="#features">Features</a>
     <a href="#pricing">Pricing</a>
-    <a href="/guide/">Maker Guide</a>
-    <a href="/how-maker-works/">How Maker Works</a>
-    <a href="support.html">Support</a>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Resources <span aria-hidden="true">▾</span></button>
+      <div class="nav-dropdown-menu">
+        <a href="/guide/">Maker Guide</a>
+        <a href="/how-maker-works/">How Maker Works</a>
+        <a href="/support.html">Support</a>
+        <a href="/changelog.html">Changelog</a>
+      </div>
+    </div>
     <a class="button button-small" href="mailto:developer@cloverbeemaker.ca?subject=CloverBee%20Maker%20Early%20Access">Join Early Access</a>
   </nav>
 </header>
@@ -50,7 +88,7 @@
     <div class="hero-preview maker-concept" aria-label="Maker interface concept preview">
       <div class="preview-label">Interface concept</div>
       <div class="concept-tablet">
-        <div class="concept-topbar"><div class="concept-brand"><img src="cloverbee-mark.png" alt="" width="34" height="34"><div><small>Maker by CloverBee</small><strong>Workshop Home</strong></div></div><div class="concept-avatar">JD</div></div>
+        <div class="concept-topbar"><div class="concept-brand"><img src="cloverbee-mark.png" alt="" width="34" height="34"><div><small>CloverBee Maker</small><strong>Workshop Home</strong></div></div><div class="concept-avatar">JD</div></div>
         <div class="concept-metrics">
           <article><small>Available stock</small><strong>247</strong><span>items</span></article>
           <article><small>Open orders</small><strong>12</strong><span>3 due soon</span></article>
@@ -162,7 +200,7 @@
 
       <article class="price-card featured">
         <div class="popular">Paid</div>
-        <div><p class="plan-name">Maker Paid</p><h3>$8.99 <small>/ month</small></h3><p class="annual-price">or C$89.99/year</p><p>More organization, more insight, less remembering.</p></div>
+        <div><p class="plan-name">Maker Paid</p><h3>C$8.99 <small>/ month</small></h3><p class="annual-price">or C$89.99/year</p><p>More organization, more insight, less remembering.</p></div>
         <ul>
           <li>Up to 4 users / 4 authorized devices total</li>
           <li>1 GB business file storage</li>
