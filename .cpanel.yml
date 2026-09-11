@@ -17,6 +17,8 @@ deployment:
     - /bin/cp script.js $DEPLOYPATH
     - /bin/cp changelog.js $DEPLOYPATH
     - /bin/cp cloverbee-mark.png $DEPLOYPATH
+    - /bin/mkdir -p $DEPLOYPATH/assets
+    - /bin/cp assets/cloverbee-honey-origin.png $DEPLOYPATH/assets/cloverbee-honey-origin.png
     - /bin/cp robots.txt $DEPLOYPATH
     - /bin/cp sitemap.xml $DEPLOYPATH
     - /bin/mkdir -p $DEPLOYPATH/maker/privacy
