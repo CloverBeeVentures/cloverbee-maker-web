@@ -103,11 +103,17 @@ Other capabilities such as customers, expenses, taxes, reporting, exports, and o
 
 ## Business-card / QR guardrails
 
-- Business-card work is paused until this identity is used as the source of truth; earlier generated card mockups are drafts, not brand authority.
-- Future card artwork must be laid out deterministically using the real logo and real type, not generated as a complete image by an image model.
+- Business-card production design is **LOCKED — 2026-09-11**.
+- Earlier image-generated card mockups are rejected drafts and are not brand authority.
+- Final artwork is laid out deterministically using the exact repository `cloverbee-mark.png` and Inter typography.
+- Printer/product: VistaPrint matte **2.5 in × 2.5 in square**, rounded corners.
+- Artwork setup: 0.125 in bleed on each side; 2.75 in × 2.75 in / 825 × 825 px at 300 dpi.
+- Front: official mark; **CloverBee Maker**; **Run the business behind what you make.**; **Built for small-batch businesses.**
+- Back: **Inventory · Production · Orders · Sales**; a real QR; **Scan to learn more**; `cloverbeemaker.ca/card`.
 - Printed QR codes must be generated as real QR data, never drawn by an image generator.
-- Current permanent card route: `https://cloverbeemaker.ca/card`.
+- Permanent QR route: `https://cloverbeemaker.ca/card`.
 - The `/card` route is intentionally CloverBee-owned so future App Store / Google Play destinations can change without reprinting cards.
+- Reproducible source and print outputs live under `marketing/business-card/` in this repository.
 
 ## Brand-board note
 
