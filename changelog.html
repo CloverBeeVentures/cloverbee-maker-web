@@ -9,7 +9,12 @@
   <link rel="icon" href="cloverbee-mark.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="changelog.css">
-<link rel="canonical" href="https://cloverbeemaker.ca/changelog.html"><meta property="og:title" content="Changelog | CloverBee Maker"><meta property="og:type" content="website"><meta property="og:url" content="https://cloverbeemaker.ca/changelog.html"><meta property="og:image" content="https://cloverbeemaker.ca/cloverbee-mark.png"></head>
+  <link rel="canonical" href="https://cloverbeemaker.ca/changelog.html">
+  <meta property="og:title" content="Changelog | CloverBee Maker">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cloverbeemaker.ca/changelog.html">
+  <meta property="og:image" content="https://cloverbeemaker.ca/cloverbee-mark.png">
+</head>
 <body>
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="CloverBee Maker home">
@@ -39,12 +44,44 @@
       <article class="release-card" data-platform="ios">
         <div class="release-topline">
           <div>
+            <p class="release-version">v1.0.0</p>
+            <h2>First public iOS release</h2>
+          </div>
+          <div class="release-badges" aria-label="Release metadata">
+            <span class="platform-badge ios">iOS</span>
+            <span class="status-badge pending">App Review</span>
+          </div>
+        </div>
+        <div class="release-meta">
+          <span>Build 7</span>
+          <span>Version 1.0.0</span>
+          <span>Manual release after Apple approval</span>
+        </div>
+        <p class="release-summary">CloverBee Maker 1.0 is the first public iPhone and iPad release: a complete small-business workflow for people who make and sell physical products.</p>
+        <h3>Included in Maker 1.0</h3>
+        <ul>
+          <li>Products, variants, materials, Recipes, production and inventory.</li>
+          <li>Orders, reservations, customers, suppliers, sales and payment tracking.</li>
+          <li>Square Point of Sale handoff from Maker with exact-amount return handling.</li>
+          <li>Expenses, configurable taxes, costing, reporting and business-data export.</li>
+          <li>Offline-first operation with cloud synchronization when a connection is available.</li>
+          <li>Free and Maker Paid plans in the same app, with no advertising on either plan.</li>
+          <li>Paid receipt/source-document storage, custom expense organization, Product Families, customer/supplier analysis, labour economics, reminders and richer exports.</li>
+          <li>Server-verified Apple subscription purchase and restore.</li>
+          <li>Recoverable account deletion and production-safe data cleanup.</li>
+        </ul>
+        <p class="release-note"><strong>Status:</strong> Build 7 has been submitted to Apple App Review. The public release remains manual and will be announced only after Apple approval, the owner releases it, and the live App Store build passes a final smoke test.</p>
+      </article>
+
+      <article class="release-card" data-platform="ios">
+        <div class="release-topline">
+          <div>
             <p class="release-version">v1.0.0 RC1</p>
             <h2>First iOS release candidate</h2>
           </div>
           <div class="release-badges" aria-label="Release metadata">
             <span class="platform-badge ios">iOS</span>
-            <span class="status-badge pending">TestFlight review pending</span>
+            <span class="status-badge">Historical beta</span>
           </div>
         </div>
         <div class="release-meta">
@@ -52,16 +89,7 @@
           <span>Build 1</span>
           <span>Version 1.0.0</span>
         </div>
-        <p class="release-summary">The first Apple-distributed Maker build has been uploaded through the production signing pipeline and submitted for external TestFlight Beta App Review.</p>
-        <h3>Included in this candidate</h3>
-        <ul>
-          <li>Products, materials, recipes, production and inventory workflows.</li>
-          <li>Customers, orders, sales, payments, expenses and reports.</li>
-          <li>Offline-first local storage with cloud synchronization when a connection is available.</li>
-          <li>Dark mode, account recovery, export and recoverable account deletion.</li>
-          <li>Free 1.0 launch configuration with no advertising or in-app purchases.</li>
-        </ul>
-        <p class="release-note"><strong>Status:</strong> Awaiting Apple Beta App Review before the first external tester round. A final public release candidate will follow physical iPhone testing and any verified fixes.</p>
+        <p class="release-summary">The first Apple-distributed Maker build entered external TestFlight and began the physical-device release-hardening cycle that led to Build 7.</p>
       </article>
 
       <p class="empty-state" hidden>No releases match this platform yet.</p>
@@ -76,7 +104,6 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="support.html">Support</a>
-      <a href="beta.html">Beta</a>
       <a href="/maker/privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
     </nav>
