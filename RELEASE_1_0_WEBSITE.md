@@ -16,24 +16,20 @@ This branch prepares the public Maker site for the 1.0 App Store launch without 
 - Free and Paid are described as shipping together in the iOS app.
 - iOS is described as submitted to Apple App Review; Android/Google Play remains a later release.
 - Old Early Access/Beta CTAs are converted to release-pending CTAs while Apple review is outstanding.
-- The homepage release state is controlled in `script.js` with `RELEASE_STATE` and `APP_STORE_URL` so the final launch switch is deliberately small.
+- The homepage release state is controlled in `script.js` with `RELEASE_CONFIG.state` and `RELEASE_CONFIG.appStoreUrl` so the final launch switch is deliberately small.
 - Changelog now includes the Maker 1.0 Build 7 public-release entry while clearly identifying the current App Review/manual-release status.
 
-## Remaining asset dependency: genuine App Store screenshots
+## Genuine App Store screenshots
 
-The App Store screenshots used for submission are not currently stored in this website repository or in the Drive files visible to the connected tools. Do not fabricate replacements.
+The five original iPhone PNGs used for the Maker 1.0 App Store submission are durably stored in this repository at:
 
-When the genuine images are available, add the five iPhone screenshots used in App Store Connect under:
+- `assets/screenshots/ios/1.0/01-home.png`
+- `assets/screenshots/ios/1.0/02-inventory.png`
+- `assets/screenshots/ios/1.0/03-orders.png`
+- `assets/screenshots/ios/1.0/04-sell.png`
+- `assets/screenshots/ios/1.0/05-reports.png` (Sales history)
 
-- `assets/app-store/iphone/home.png`
-- `assets/app-store/iphone/inventory.png`
-- `assets/app-store/iphone/orders.png`
-- `assets/app-store/iphone/sell.png`
-- `assets/app-store/iphone/sales-history.png`
-
-The submitted iPhone assets were 1242 × 2688. Equivalent iPad assets may be retained for App Store use but are optional for the website unless the layout benefits from them.
-
-Replace the current concept/interface preview area with these genuine screenshots before the release-site branch is merged for launch. Preserve truthful captions; do not add features or data not present in the actual screenshots.
+Each original is 1242 × 2688. The website uses the originals directly inside CSS device-style frames; it does not crop, redraw or replace the screenshot pixels. The hero and five-step gallery have replaced the former concept interface art.
 
 ## Final launch switch
 
@@ -42,10 +38,11 @@ After Apple approval:
 1. Owner manually releases Maker.
 2. Wait for the public listing to resolve.
 3. Install the public App Store build and run the launch smoke test.
-4. Set `APP_STORE_URL` in `script.js` to the public listing.
-5. Change `RELEASE_STATE` from `review` to `live`.
-6. Replace the concept previews with the genuine App Store screenshot assets if not already completed.
-7. Verify homepage, pricing, Square, support, privacy, terms, changelog and App Store links.
-8. Deploy/merge the website only after the public build passes the smoke test.
+4. In `script.js`, set `RELEASE_CONFIG.appStoreUrl` to the verified public App Store URL.
+5. In the same object, change `RELEASE_CONFIG.state` from `review` to `live`.
+6. That centralized switch changes every release CTA to **Download on the App Store**, changes the availability card and status copy to **Available on iPhone and iPad**, changes the final callout/footer, and adds the public App Store URL to the SoftwareApplication structured data as `downloadUrl` and `installUrl`.
+7. There is no separate launch banner at present. If one is added on release day, keep its state driven by `RELEASE_CONFIG` rather than hard-coding availability elsewhere.
+8. Verify the public App Store URL, homepage, pricing, Square, support, privacy, terms, changelog and structured data.
+9. Merge/deploy the website only after the public build passes the smoke test.
 
 No release-day social announcement should precede the verified public App Store build.

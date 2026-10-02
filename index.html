@@ -16,15 +16,16 @@
   <meta name="twitter:description" content="Run the business behind what you make.">
   <link rel="canonical" href="https://cloverbeemaker.ca/">
   <link rel="icon" href="cloverbee-mark.png">
-  <link rel="stylesheet" href="styles.css?v=20260910g">
-  <link rel="stylesheet" href="maker-preview.css?v=20260910d">
-  <script type="application/ld+json">
+  <link rel="stylesheet" href="styles.css?v=20261001a">
+  <link rel="stylesheet" href="maker-preview.css?v=20261001a">
+  <script id="maker-structured-data" type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"SoftwareApplication",
     "name":"CloverBee Maker",
     "applicationCategory":"BusinessApplication",
-    "operatingSystem":"iOS, Android",
+    "operatingSystem":"iOS",
+    "softwareVersion":"1.0",
     "url":"https://cloverbeemaker.ca/",
     "description":"Business operations software for small-batch makers: materials, recipes, production, inventory, orders, sales, expenses, costing and tax-ready records.",
     "offers":[
@@ -65,7 +66,7 @@
         <a href="/changelog.html">Changelog</a>
       </div>
     </div>
-    <a class="button button-small" href="mailto:developer@cloverbeemaker.ca?subject=CloverBee%20Maker%20Early%20Access">Join Early Access</a>
+    <a class="button button-small release-cta" href="#availability">App Store release pending</a>
   </nav>
 </header>
 
@@ -77,7 +78,7 @@
       <p class="hero-kicker">Inventory <span>•</span> Production <span>•</span> Orders <span>•</span> Sales <span>•</span> Expenses <span>•</span> Taxes</p>
       <p class="hero-lead">CloverBee Maker connects materials, recipes, production, inventory, orders, customers, payments and expenses so you can see what you have, what is committed, what things cost, what is due, and what the business is doing.</p>
       <div class="hero-actions">
-        <a class="button" href="mailto:developer@cloverbeemaker.ca?subject=CloverBee%20Maker%20Early%20Access">Join Early Access</a>
+        <a class="button release-cta" href="#availability">App Store release pending</a>
         <a class="button button-ghost" href="#pricing">Compare Free &amp; Paid</a>
       </div>
       <ul class="trust-strip" aria-label="Product highlights">
@@ -85,27 +86,44 @@
       </ul>
     </div>
 
-    <div class="hero-preview maker-concept" aria-label="Maker interface concept preview">
-      <div class="preview-label">Interface concept</div>
-      <div class="concept-tablet">
-        <div class="concept-topbar"><div class="concept-brand"><img src="cloverbee-mark.png" alt="" width="34" height="34"><div><small>CloverBee Maker</small><strong>Workshop Home</strong></div></div><div class="concept-avatar">JD</div></div>
-        <div class="concept-metrics">
-          <article><small>Available stock</small><strong>247</strong><span>items</span></article>
-          <article><small>Open orders</small><strong>12</strong><span>3 due soon</span></article>
-          <article><small>Reserved</small><strong>34</strong><span>committed</span></article>
-          <article><small>Sales MTD</small><strong>$1,246</strong><span>CAD</span></article>
-        </div>
-        <div class="concept-work"><div><small>Today</small><strong>What needs attention</strong><ul><li><b>3</b> orders due soon</li><li><b>2</b> materials running low</li><li><b>1</b> unpaid delivery</li></ul></div><div class="concept-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-      </div>
-      <div class="concept-phone">
-        <div class="concept-phone-head"><img src="cloverbee-mark.png" alt="" width="24" height="24"><strong>Outstanding</strong></div>
-        <div class="concept-tabs"><b>All</b><span>Due</span><span>Unpaid</span></div>
-        <ul class="concept-orders">
-          <li><div><b>O-1038</b><span>Sarah M.</span><small>Due today</small></div><em class="status-paid">Paid</em></li>
-          <li><div><b>O-1041</b><span>Prairie Market</span><small>Due Fri</small></div><em class="status-reserved">Reserved</em></li>
-          <li><div><b>O-1044</b><span>John D.</span><small>Delivered</small></div><em class="status-due">Unpaid</em></li>
-        </ul>
-      </div>
+    <div class="hero-preview app-shot-hero" aria-label="Genuine CloverBee Maker app screenshots">
+      <p class="preview-label">Maker 1.0 on iPhone</p>
+      <figure class="app-device app-device-primary">
+        <img src="assets/screenshots/ios/1.0/01-home.png" alt="CloverBee Maker home screen showing sync, new sale and outstanding-order shortcuts" width="1242" height="2688" fetchpriority="high">
+      </figure>
+      <figure class="app-device app-device-secondary" aria-hidden="true">
+        <img src="assets/screenshots/ios/1.0/03-orders.png" alt="" width="1242" height="2688">
+      </figure>
+    </div>
+  </section>
+
+  <section id="screenshots" class="section screenshot-section">
+    <div class="section-heading">
+      <p class="eyebrow">The real Maker 1.0 workflow</p>
+      <h2>From today’s work to the sale history behind it.</h2>
+      <p>These are genuine screens from the iPhone release build submitted to Apple—not mockups or concept art.</p>
+    </div>
+    <div class="screenshot-gallery" aria-label="CloverBee Maker 1.0 screenshot gallery">
+      <figure class="screenshot-card">
+        <div class="app-device"><img src="assets/screenshots/ios/1.0/01-home.png" alt="Maker home screen for Clover and Craft Studio with sync, new-sale and outstanding-order actions" width="1242" height="2688"></div>
+        <figcaption><span>01</span><strong>Home</strong><small>See the business and jump into today’s work.</small></figcaption>
+      </figure>
+      <figure class="screenshot-card">
+        <div class="app-device"><img src="assets/screenshots/ios/1.0/02-inventory.png" alt="Maker inventory screen showing materials and finished products with on-hand, reserved and available quantities" width="1242" height="2688"></div>
+        <figcaption><span>02</span><strong>Inventory</strong><small>Know what is on hand, reserved and available.</small></figcaption>
+      </figure>
+      <figure class="screenshot-card">
+        <div class="app-device"><img src="assets/screenshots/ios/1.0/03-orders.png" alt="Maker outstanding-orders screen showing an order due date, amount, fulfilment and customer" width="1242" height="2688"></div>
+        <figcaption><span>03</span><strong>Orders</strong><small>Keep commitments, due dates and balances together.</small></figcaption>
+      </figure>
+      <figure class="screenshot-card">
+        <div class="app-device"><img src="assets/screenshots/ios/1.0/04-sell.png" alt="Maker sell screen with products, current sale, customer, payment status and payment method" width="1242" height="2688"></div>
+        <figcaption><span>04</span><strong>Sell</strong><small>Build a sale and record how it was paid.</small></figcaption>
+      </figure>
+      <figure class="screenshot-card">
+        <div class="app-device"><img src="assets/screenshots/ios/1.0/05-reports.png" alt="Maker sales-history screen showing year-to-date sales and filters for payment type, transaction type and customer" width="1242" height="2688"></div>
+        <figcaption><span>05</span><strong>Sales history</strong><small>Review transactions and filter the record you need.</small></figcaption>
+      </figure>
     </div>
   </section>
 
@@ -164,10 +182,10 @@
   <section id="payments" class="section payments-section">
     <div>
       <p class="eyebrow">Payments should feel like part of Maker</p>
-      <h2>Square integration is planned for launch.</h2>
-      <p>The target is simple: start the payment from the Maker sale or order, send the exact amount to Square, complete the card payment, and return to Maker with the payment recorded once and the balance updated automatically.</p>
+      <h2>Square payment handoff is built into Maker 1.0.</h2>
+      <p>Start from a Maker sale or order, send the exact CAD balance to Square Point of Sale, complete the payment in Square, and return to Maker. A validated success is recorded once and the Maker balance updates automatically.</p>
       <p>Square remains the payment processor. Maker remains the source of truth for products, inventory, orders, customers and business records.</p>
-      <p class="fine-print">Integrated Square payment is being finalized during beta and is not represented as live in the current pre-release build.</p>
+      <p class="fine-print">Square Point of Sale must be installed and configured separately.</p>
     </div>
     <div class="payment-badges" aria-label="Payment workflow">
       <span>Exact amount handed off</span><span>Square handles card payment</span><span>Return to Maker automatically</span><span>Payment recorded once</span><span>Balance updates</span><span>Free + Paid</span>
@@ -194,7 +212,7 @@
     <div class="section-heading pricing-heading">
       <p class="eyebrow">Free and Paid launch together</p>
       <h2>Start free. Pay when Maker starts saving more of your time.</h2>
-      <p>Planned Canadian launch pricing. One Maker app, one business account. <strong>No ads on Free or Paid.</strong></p>
+      <p>Canadian launch pricing. One Maker app, one business account. <strong>No ads on Free or Paid.</strong></p>
     </div>
 
     <div class="pricing-cards">
@@ -211,7 +229,7 @@
           <li>Core tax totals &amp; basic reporting</li>
           <li>Business-data export, offline use &amp; cloud sync</li>
         </ul>
-        <a class="button button-outline" href="mailto:developer@cloverbeemaker.ca?subject=CloverBee%20Maker%20Free%20Early%20Access">Get Early Access</a>
+        <a class="button button-outline release-cta" href="#availability">App Store release pending</a>
       </article>
 
       <article class="price-card featured">
@@ -229,7 +247,7 @@
           <li>Expense Analysis, comparisons &amp; richer reporting</li>
           <li>Purpose-specific CSV/accountant exports</li>
         </ul>
-        <a class="button" href="mailto:developer@cloverbeemaker.ca?subject=CloverBee%20Maker%20Paid%20Early%20Access">Join Early Access</a>
+        <a class="button release-cta" href="#availability">App Store release pending</a>
       </article>
     </div>
 
@@ -245,7 +263,7 @@
           <tr><td>Inventory, reservations, orders &amp; sales</td><td>Yes</td><td>Yes</td></tr>
           <tr><td>Customers &amp; suppliers</td><td>Basic records</td><td>Records + analysis</td></tr>
           <tr><td>Offline use &amp; cloud sync</td><td>Yes</td><td>Yes</td></tr>
-          <tr><td>Square integrated payment</td><td>Planned at launch</td><td>Planned at launch</td></tr>
+          <tr><td>Square Point of Sale handoff</td><td>Included</td><td>Included</td></tr>
 
           <tr class="comparison-group"><td colspan="3">Costing &amp; expenses</td></tr>
           <tr><td>Current material cost</td><td>Yes</td><td>Yes</td></tr>
@@ -354,27 +372,26 @@
       <p class="eyebrow">Take the business with you</p>
       <h2>Made for the workshop, market table and delivery run.</h2>
       <ul class="large-checks">
-        <li>iPhone/iPad and Android public releases planned</li>
-        <li>Free and Paid available in the same app at official launch</li>
+        <li data-ios-status>iPhone and iPad Build 7 submitted to Apple App Review</li>
+        <li>Free and Maker Paid ship together in the same iOS app</li>
         <li>Works offline with cloud-backed data</li>
         <li>Fast entry for sales, orders, production and inventory changes</li>
       </ul>
-      <div class="store-coming" aria-label="Planned app store availability">
-        <div class="store-card"><span class="store-device" aria-hidden="true">▯</span><div><small>iPhone &amp; iPad</small><strong>Coming to the App Store</strong><em>External beta in progress</em></div></div>
-        <div class="store-card"><span class="store-device store-device-play" aria-hidden="true">▷</span><div><small>Android</small><strong>Coming to Google Play</strong><em>Organization publishing setup pending</em></div></div>
+      <div id="availability" class="store-coming" aria-label="App availability">
+        <div class="store-card ios-store-card"><span class="store-device" aria-hidden="true">▯</span><div><small>iPhone &amp; iPad</small><strong>Submitted to Apple App Review</strong><em>Manual release after approval</em></div></div>
+        <div class="store-card"><span class="store-device store-device-play" aria-hidden="true">▷</span><div><small>Android</small><strong>Google Play release follows iOS</strong><em>Not currently available</em></div></div>
       </div>
-      <p class="store-note">These are pre-release availability notices, not download or pre-order badges.</p>
+      <p class="store-note">Maker 1.0 is in Apple App Review. Public availability begins only after approval and Jordon’s manual release.</p>
     </div>
-    <div class="maker-phone-stack" aria-label="Maker interface concept previews">
-      <div class="maker-mini-phone"><div class="mini-app-head"><img src="cloverbee-mark.png" alt="" width="26" height="26"><div><small>Maker</small><strong>New Sale</strong></div></div><div class="mini-row"><span>Lavender candle</span><b>2 × $18</b></div><div class="mini-row"><span>Honey soap</span><b>3 × $9</b></div><div class="mini-row muted"><span>Customer</span><b>Walk-in</b></div><div class="mini-total"><span>Total</span><strong>$63.00</strong></div><div class="mini-action">Complete sale</div></div>
-      <div class="maker-mini-phone elevated"><div class="mini-app-head"><img src="cloverbee-mark.png" alt="" width="26" height="26"><div><small>Maker</small><strong>Make</strong></div></div><span class="batch-chip">Batch B-2026-0042</span><div class="mini-row"><span>Product</span><b>Lavender Candle</b></div><div class="mini-row"><span>Quantity</span><b>24 ea</b></div><div class="mini-row good"><span>Wax</span><b>Enough</b></div><div class="mini-row good"><span>Jars</span><b>Enough</b></div><div class="mini-action">Make 24</div></div>
-      <div class="maker-mini-phone"><div class="mini-app-head"><img src="cloverbee-mark.png" alt="" width="26" height="26"><div><small>Maker</small><strong>YTD</strong></div></div><div class="report-total"><small>Gross sales</small><strong>$18,462</strong></div><div class="mini-row"><span>Cash</span><b>$5,240</b></div><div class="mini-row"><span>E-transfer</span><b>$6,430</b></div><div class="mini-row"><span>Square</span><b>$6,792</b></div><div class="mini-row muted"><span>Tax records</span><b>Ready</b></div></div>
+    <div class="availability-shots" aria-label="Genuine Maker inventory and selling screens">
+      <figure class="app-device"><img src="assets/screenshots/ios/1.0/02-inventory.png" alt="Maker inventory screen on iPhone" width="1242" height="2688"></figure>
+      <figure class="app-device"><img src="assets/screenshots/ios/1.0/04-sell.png" alt="Maker sell screen on iPhone" width="1242" height="2688"></figure>
     </div>
   </section>
 
   <section class="section final-cta">
-    <div><p class="eyebrow">External beta in progress</p><h2>Focus on what you make. Keep the business side under control.</h2><p>Maker is in real-device beta now. Feedback from this round is being used for the final cleanup before the official Free + Paid release.</p></div>
-    <a class="button" href="mailto:developer@cloverbeemaker.ca?subject=CloverBee%20Maker%20Early%20Access">Join Early Access</a>
+    <div><p class="eyebrow">Maker 1.0 is in App Review</p><h2>Focus on what you make. Keep the business side under control.</h2><p>Build 7 has been submitted to Apple. Public availability begins after approval, manual release and a final smoke test of the live App Store build.</p></div>
+    <a class="button release-cta" href="#availability">App Store release pending</a>
   </section>
 </main>
 
@@ -393,6 +410,6 @@
     <span>© 2026 CloverBee Maker. Pre-launch website.</span>
   </div>
 </footer>
-<script src="script.js?v=20260910d"></script>
+<script src="script.js?v=20261001a"></script>
 </body>
 </html>

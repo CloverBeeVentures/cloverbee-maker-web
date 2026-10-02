@@ -1,6 +1,6 @@
 # CloverBee Maker Website
 
-Static pre-launch marketing website for CloverBee Maker.
+Static marketing website for CloverBee Maker.
 
 ## Deployment
 
@@ -18,7 +18,9 @@ Then open `http://localhost:8080`.
 
 ## Important content status
 
-- Free and Maker pricing shown here is planned launch pricing.
-- Payment integrations are explicitly marked as planned.
-- Interface images are concept previews using demo data.
-- Privacy and Terms pages are pre-launch website notices, not final commercial application policies.
+- Maker 1.0 Build 7 is in Apple App Review with manual release.
+- Canadian pricing is Free, C$8.99/month and C$89.99/year.
+- Square Point of Sale handoff is part of Maker 1.0.
+- Genuine App Store screenshots are stored under `assets/screenshots/ios/1.0/`.
+- Android/Google Play is a later release and is not currently presented as available.
+- The centralized review/live switch is documented in `RELEASE_1_0_WEBSITE.md`.

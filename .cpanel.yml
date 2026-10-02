@@ -19,6 +19,12 @@ deployment:
     - /bin/cp cloverbee-mark.png $DEPLOYPATH
     - /bin/mkdir -p $DEPLOYPATH/assets
     - /bin/cp assets/cloverbee-honey-origin.png $DEPLOYPATH/assets/cloverbee-honey-origin.png
+    - /bin/mkdir -p $DEPLOYPATH/assets/screenshots/ios/1.0
+    - /bin/cp assets/screenshots/ios/1.0/01-home.png $DEPLOYPATH/assets/screenshots/ios/1.0/01-home.png
+    - /bin/cp assets/screenshots/ios/1.0/02-inventory.png $DEPLOYPATH/assets/screenshots/ios/1.0/02-inventory.png
+    - /bin/cp assets/screenshots/ios/1.0/03-orders.png $DEPLOYPATH/assets/screenshots/ios/1.0/03-orders.png
+    - /bin/cp assets/screenshots/ios/1.0/04-sell.png $DEPLOYPATH/assets/screenshots/ios/1.0/04-sell.png
+    - /bin/cp assets/screenshots/ios/1.0/05-reports.png $DEPLOYPATH/assets/screenshots/ios/1.0/05-reports.png
     - /bin/cp robots.txt $DEPLOYPATH
     - /bin/cp sitemap.xml $DEPLOYPATH
     - /bin/mkdir -p $DEPLOYPATH/maker/privacy
