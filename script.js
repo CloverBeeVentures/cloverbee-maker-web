@@ -33,6 +33,17 @@ if(nav){
 
 document.querySelectorAll('a[href="privacy.html"]').forEach(a=>{a.href='/maker/privacy.html';});
 
+// Put Android / Google Play status at the same visual level as the App Store CTA.
+const heroActions=document.querySelector('.hero-actions');
+if(heroActions&&!heroActions.querySelector('.android-release-cta')){
+  const androidButton=document.createElement('a');
+  androidButton.className='button android-release-cta';
+  androidButton.href='#availability';
+  androidButton.textContent='Google Play release pending';
+  const compareButton=heroActions.querySelector('.button-ghost');
+  heroActions.insertBefore(androidButton,compareButton||null);
+}
+
 // Keep two launch-relevant facts visible in the hero as well as in their detailed sections.
 const trustStrip=document.querySelector('.trust-strip');
 if(trustStrip){
