@@ -33,6 +33,25 @@ if(nav){
 
 document.querySelectorAll('a[href="privacy.html"]').forEach(a=>{a.href='/maker/privacy.html';});
 
+// Add a durable launch message for one of Maker's small-business personalization features.
+const featureGrid=document.querySelector('#features .feature-grid');
+if(featureGrid&&!featureGrid.querySelector('[data-feature="branding"]')){
+  const brandingFeature=document.createElement('article');
+  brandingFeature.dataset.feature='branding';
+  brandingFeature.innerHTML='<div class="feature-symbol">YOU</div><h3>Make Maker feel like yours</h3><p>Add your own business logo so the app reflects your brand, not ours. Your logo appears inside Maker alongside your business name, helping the workspace feel like part of your business rather than generic software.</p>';
+  featureGrid.appendChild(brandingFeature);
+}
+
+// Keep the Android storefront status explicit while organization publishing remains pending.
+const storeCards=document.querySelectorAll('#availability .store-card');
+const androidStoreCard=storeCards.length>1?storeCards[1]:null;
+if(androidStoreCard){
+  const title=androidStoreCard.querySelector('strong');
+  const detail=androidStoreCard.querySelector('em');
+  if(title)title.textContent='Google Play release pending';
+  if(detail)detail.textContent='Organization publishing setup in progress';
+}
+
 /*
  * Maker 1.0 release switch.
  * Keep state at `review` and appStoreUrl empty until Jordon manually releases
@@ -86,8 +105,8 @@ if(iosStoreCard){
 const storeNote=document.querySelector('.store-note');
 if(storeNote){
   storeNote.textContent=isLive
-    ?'Maker 1.0 is available on the Apple App Store. Android availability will be announced separately.'
-    :'Maker 1.0 is in Apple App Review. Public availability begins only after approval and Jordon’s manual release.';
+    ?'Maker 1.0 is available on the Apple App Store. Google Play release remains pending and Android availability will be announced separately.'
+    :'Maker 1.0 is in Apple App Review. Public availability begins only after approval and Jordon’s manual release. Google Play release remains pending organization publishing setup.';
 }
 
 const finalEyebrow=document.querySelector('.final-cta .eyebrow');
