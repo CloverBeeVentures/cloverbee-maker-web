@@ -33,6 +33,23 @@ if(nav){
 
 document.querySelectorAll('a[href="privacy.html"]').forEach(a=>{a.href='/maker/privacy.html';});
 
+// Keep two launch-relevant facts visible in the hero as well as in their detailed sections.
+const trustStrip=document.querySelector('.trust-strip');
+if(trustStrip){
+  if(!trustStrip.querySelector('[data-highlight="branding"]')){
+    const branding=document.createElement('li');
+    branding.dataset.highlight='branding';
+    branding.textContent='Use your own business logo';
+    trustStrip.appendChild(branding);
+  }
+  if(!trustStrip.querySelector('[data-highlight="android"]')){
+    const android=document.createElement('li');
+    android.dataset.highlight='android';
+    android.textContent='Android / Google Play pending';
+    trustStrip.appendChild(android);
+  }
+}
+
 /*
  * Maker 1.0 release switch.
  * Keep state at `review` and appStoreUrl empty until Jordon manually releases
