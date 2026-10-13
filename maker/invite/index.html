@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Join a team in Maker by CloverBee</title>
+  <style>
+    :root{color-scheme:light dark;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f3f7f4;color:#26352b}
+    body{margin:0;padding:24px}.card{box-sizing:border-box;max-width:620px;margin:6vh auto;background:#fff;border:1px solid #dce7df;border-radius:18px;padding:32px;box-shadow:0 12px 35px rgba(23,58,37,.08)}
+    .brand{font-size:30px;font-weight:800;color:#08783c}.brand small{font-size:15px;color:#5a6a60}h1{font-size:25px;margin:28px 0 10px}p{line-height:1.55}.button{display:inline-block;border:0;border-radius:9px;background:#08783c;color:#fff;text-decoration:none;font-weight:700;padding:13px 19px;cursor:pointer}.secondary{background:#edf5ef;color:#075f31;margin-left:8px}.code{word-break:break-all;background:#f1f5f2;border-radius:9px;padding:13px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.muted{font-size:14px;color:#637268}.error{color:#8a2b1f}@media (prefers-color-scheme:dark){:root{background:#132019;color:#e7eee9}.card{background:#1e2c23;border-color:#34483b}.brand small,.muted{color:#aec0b4}.code{background:#28392e}.secondary{background:#2f4938;color:#dbf4e3}}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="brand">Maker <small>by CloverBee</small></div>
+    <h1>Team invitation</h1>
+    <p id="status">Open Maker to review this invitation. Sign in or create an account with the email address that received it.</p>
+    <p><a class="button" id="open-maker" href="#">Open Maker</a><a class="button secondary" href="https://play.google.com/store/apps/details?id=ca.cloverbee.maker">Get it on Google Play</a></p>
+    <p class="muted">iPhone and iPad testers should install Maker using the TestFlight invitation supplied by the team administrator.</p>
+    <h2>Invitation code</h2>
+    <p class="code" id="invite-code">Loading…</p>
+    <p><button class="button secondary" id="copy-code" type="button">Copy code</button></p>
+    <p class="muted">The code is one-time, expires after seven days, and works only with the invited verified email address. If you were not expecting this invitation, close this page.</p>
+  </main>
+  <script>
+    const code=new URLSearchParams(location.search).get('invite_code')||'';
+    const valid=code.length>=20&&code.length<=512;
+    const codeNode=document.getElementById('invite-code');
+    const openNode=document.getElementById('open-maker');
+    if(valid){codeNode.textContent=code;openNode.href='ca.cloverbee.maker://team-invitation?invite_code='+encodeURIComponent(code)}
+    else{codeNode.textContent='This invitation link is incomplete.';codeNode.classList.add('error');openNode.hidden=true;document.getElementById('copy-code').hidden=true}
+    document.getElementById('copy-code').addEventListener('click',async(event)=>{if(!valid)return;await navigator.clipboard.writeText(code);event.currentTarget.textContent='Copied'});
+  </script>
+</body>
+</html>
