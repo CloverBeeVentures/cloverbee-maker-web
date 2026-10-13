@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "ca.cloverbee.maker",
+      "sha256_cert_fingerprints": [
+        "AE:DF:23:61:D1:4C:6F:B3:B2:4D:E3:B0:7B:9A:04:B4:03:49:DC:5D:D5:1F:C0:3C:AF:8D:4E:A0:7A:DE:2A:2A"
+      ]
+    }
+  }
+]
