@@ -33,13 +33,13 @@ if(nav){
 
 document.querySelectorAll('a[href="privacy.html"]').forEach(a=>{a.href='/maker/privacy.html';});
 
-// Put Android / Google Play status at the same visual level as the App Store CTA.
+// Put Google Play status at the same visual level as the Apple App Store CTA.
 const heroActions=document.querySelector('.hero-actions');
 if(heroActions&&!heroActions.querySelector('.android-release-cta')){
   const androidButton=document.createElement('a');
   androidButton.className='button android-release-cta';
   androidButton.href='#availability';
-  androidButton.textContent='Google Play release pending';
+  androidButton.textContent='Google Play — Store release pending';
   const compareButton=heroActions.querySelector('.button-ghost');
   heroActions.insertBefore(androidButton,compareButton||null);
 }
@@ -56,27 +56,27 @@ if(trustStrip){
   if(!trustStrip.querySelector('[data-highlight="android"]')){
     const android=document.createElement('li');
     android.dataset.highlight='android';
-    android.textContent='Android / Google Play pending';
+    android.textContent='Google Play · Store release pending';
     trustStrip.appendChild(android);
   }
 }
 
 /*
- * Maker 1.0 release switch.
- * Keep state at `review` and appStoreUrl empty until Jordon manually releases
- * Maker and the public build passes the release-day smoke test.
+ * Maker 1.0 release controls. Keep both platforms pending until the owner
+ * approves release and the public store build passes physical-device checks.
  */
 const RELEASE_CONFIG=Object.freeze({
-  state:'review', // review | live
-  appStoreUrl:''
+  ios:Object.freeze({state:'pending',url:''}), // pending | live
+  android:Object.freeze({state:'pending',url:''}) // pending | live
 });
 
-const isLive=RELEASE_CONFIG.state==='live'&&Boolean(RELEASE_CONFIG.appStoreUrl);
+const iosIsLive=RELEASE_CONFIG.ios.state==='live'&&Boolean(RELEASE_CONFIG.ios.url);
+const androidIsLive=RELEASE_CONFIG.android.state==='live'&&Boolean(RELEASE_CONFIG.android.url);
 
 document.querySelectorAll('.release-cta').forEach(link=>{
-  link.textContent=isLive?'Download on the App Store':'App Store release pending';
-  link.href=isLive?RELEASE_CONFIG.appStoreUrl:'#availability';
-  if(isLive){
+  link.textContent=iosIsLive?'Download on the Apple App Store':'Apple App Store — Store release pending';
+  link.href=iosIsLive?RELEASE_CONFIG.ios.url:'#availability';
+  if(iosIsLive){
     link.target='_blank';
     link.rel='noopener noreferrer';
   }else{
@@ -87,61 +87,78 @@ document.querySelectorAll('.release-cta').forEach(link=>{
 
 const iosStatus=document.querySelector('[data-ios-status]');
 if(iosStatus){
-  iosStatus.textContent=isLive
+  iosStatus.textContent=iosIsLive
     ?'Available on iPhone and iPad'
-    :'iPhone and iPad Build 7 submitted to Apple App Review';
+    :'Apple App Store · Store release pending';
 }
 
 const iosStoreCard=document.querySelector('.ios-store-card');
 if(iosStoreCard){
   const title=iosStoreCard.querySelector('strong');
   const detail=iosStoreCard.querySelector('em');
-  if(title)title.textContent=isLive?'Download on the App Store':'Submitted to Apple App Review';
-  if(detail)detail.textContent=isLive?'Available on iPhone and iPad':'Manual release after approval';
-  if(isLive){
+  if(title)title.textContent=iosIsLive?'Download on the Apple App Store':'Store release pending';
+  if(detail)detail.textContent=iosIsLive?'Available on iPhone and iPad':'Not publicly available';
+  if(iosIsLive){
     iosStoreCard.setAttribute('role','link');
     iosStoreCard.setAttribute('tabindex','0');
-    iosStoreCard.addEventListener('click',()=>window.open(RELEASE_CONFIG.appStoreUrl,'_blank','noopener,noreferrer'));
+    iosStoreCard.addEventListener('click',()=>window.open(RELEASE_CONFIG.ios.url,'_blank','noopener,noreferrer'));
     iosStoreCard.addEventListener('keydown',event=>{
       if(event.key==='Enter'||event.key===' '){
         event.preventDefault();
-        window.open(RELEASE_CONFIG.appStoreUrl,'_blank','noopener,noreferrer');
+        window.open(RELEASE_CONFIG.ios.url,'_blank','noopener,noreferrer');
       }
     });
   }
 }
 
-const storeNote=document.querySelector('.store-note');
-if(storeNote){
-  storeNote.textContent=isLive
-    ?'Maker 1.0 is available on the Apple App Store. Google Play release remains pending and Android availability will be announced separately.'
-    :'Maker 1.0 is in Apple App Review. Public availability begins only after approval and Jordon’s manual release. Google Play release remains pending organization publishing setup.';
+const androidButton=document.querySelector('.android-release-cta');
+if(androidButton){
+  androidButton.textContent=androidIsLive?'Get it on Google Play':'Google Play — Store release pending';
+  androidButton.href=androidIsLive?RELEASE_CONFIG.android.url:'#availability';
+  if(androidIsLive){androidButton.target='_blank';androidButton.rel='noopener noreferrer';}
 }
 
-const finalEyebrow=document.querySelector('.final-cta .eyebrow');
-const finalBody=document.querySelector('.final-cta p:not(.eyebrow)');
-if(finalEyebrow)finalEyebrow.textContent=isLive?'Maker 1.0 is live':'Maker 1.0 is in App Review';
+const androidStoreCard=document.querySelector('.android-store-card');
+if(androidStoreCard){
+  const title=androidStoreCard.querySelector('strong');
+  const detail=androidStoreCard.querySelector('em');
+  if(title)title.textContent=androidIsLive?'Get it on Google Play':'Store release pending';
+  if(detail)detail.textContent=androidIsLive?'Available on Android':'Not publicly available';
+}
+
+const storeNote=document.querySelector('.store-note');
+if(storeNote){
+  storeNote.textContent=iosIsLive||androidIsLive
+    ?'Check each platform card for current availability. A platform is announced only after its public store build passes final checks.'
+    :'iOS and Android are being prepared in parallel for a coordinated release. Each platform remains subject to its own review, physical-device checks and explicit owner approval. Neither app is publicly available.';
+}
+
+const hasHomepageAvailability=Boolean(document.querySelector('#availability'));
+const finalEyebrow=hasHomepageAvailability?document.querySelector('.final-cta .eyebrow'):null;
+const finalBody=hasHomepageAvailability?document.querySelector('.final-cta p:not(.eyebrow)'):null;
+if(finalEyebrow)finalEyebrow.textContent=iosIsLive||androidIsLive?'Maker 1.0 availability':'Store release pending';
 if(finalBody){
-  finalBody.textContent=isLive
-    ?'Maker 1.0 brings the complete Free + Paid small-business workflow to iPhone and iPad.'
-    :'Build 7 has been submitted to Apple. Public availability begins after approval, manual release and a final smoke test of the live App Store build.';
+  finalBody.textContent=iosIsLive||androidIsLive
+    ?'Maker 1.0 brings the complete Free + Paid small-business workflow to supported devices.'
+    :'iOS and Android are being prepared in parallel. Public availability begins only after store approval, owner approval and final physical-device checks.';
 }
 
 document.querySelectorAll('.footer-contact span').forEach(span=>{
   if(span.textContent.includes('Pre-launch website')){
-    span.textContent=isLive
+    span.textContent=iosIsLive||androidIsLive
       ?'© 2026 CloverBee Maker. Maker 1.0.'
-      :'© 2026 CloverBee Maker. Maker 1.0 — Apple App Review.';
+      :'© 2026 CloverBee Maker. Store release pending.';
   }
 });
 
-// The public App Store URL only enters structured data in the live state.
+// Public store URLs only enter structured data after the matching live switch.
 const structuredData=document.querySelector('#maker-structured-data');
-if(structuredData&&isLive){
+if(structuredData&&(iosIsLive||androidIsLive)){
   try{
     const data=JSON.parse(structuredData.textContent);
-    data.downloadUrl=RELEASE_CONFIG.appStoreUrl;
-    data.installUrl=RELEASE_CONFIG.appStoreUrl;
+    const liveUrls=[iosIsLive?RELEASE_CONFIG.ios.url:null,androidIsLive?RELEASE_CONFIG.android.url:null].filter(Boolean);
+    data.downloadUrl=liveUrls;
+    data.installUrl=liveUrls;
     structuredData.textContent=JSON.stringify(data);
   }catch(error){
     console.error('Maker structured data could not be updated.',error);
