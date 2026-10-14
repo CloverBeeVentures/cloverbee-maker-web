@@ -27,6 +27,7 @@ deployment:
     - /bin/cp assets/screenshots/ios/1.0/05-reports.png $DEPLOYPATH/assets/screenshots/ios/1.0/05-reports.png
     - /bin/mkdir -p $DEPLOYPATH/assets/screenshots/android/1.0
     - /bin/cp assets/screenshots/android/1.0/00-account-sign-in.png $DEPLOYPATH/assets/screenshots/android/1.0/00-account-sign-in.png
+    - /bin/cp assets/screenshots/android/1.0/00-business-choice.png $DEPLOYPATH/assets/screenshots/android/1.0/00-business-choice.png
     - /bin/cp assets/screenshots/android/1.0/01-add-product.png $DEPLOYPATH/assets/screenshots/android/1.0/01-add-product.png
     - /bin/cp assets/screenshots/android/1.0/02-business-settings.png $DEPLOYPATH/assets/screenshots/android/1.0/02-business-settings.png
     - /bin/cp assets/screenshots/android/1.0/03-add-material.png $DEPLOYPATH/assets/screenshots/android/1.0/03-add-material.png
