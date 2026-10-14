@@ -25,6 +25,15 @@ deployment:
     - /bin/cp assets/screenshots/ios/1.0/03-orders.png $DEPLOYPATH/assets/screenshots/ios/1.0/03-orders.png
     - /bin/cp assets/screenshots/ios/1.0/04-sell.png $DEPLOYPATH/assets/screenshots/ios/1.0/04-sell.png
     - /bin/cp assets/screenshots/ios/1.0/05-reports.png $DEPLOYPATH/assets/screenshots/ios/1.0/05-reports.png
+    - /bin/mkdir -p $DEPLOYPATH/assets/screenshots/android/1.0
+    - /bin/cp assets/screenshots/android/1.0/01-add-product.png $DEPLOYPATH/assets/screenshots/android/1.0/01-add-product.png
+    - /bin/cp assets/screenshots/android/1.0/02-business-settings.png $DEPLOYPATH/assets/screenshots/android/1.0/02-business-settings.png
+    - /bin/cp assets/screenshots/android/1.0/03-add-material.png $DEPLOYPATH/assets/screenshots/android/1.0/03-add-material.png
+    - /bin/cp assets/screenshots/android/1.0/04-recipe-editor.png $DEPLOYPATH/assets/screenshots/android/1.0/04-recipe-editor.png
+    - /bin/cp assets/screenshots/android/1.0/05-receiving.png $DEPLOYPATH/assets/screenshots/android/1.0/05-receiving.png
+    - /bin/cp assets/screenshots/android/1.0/06-make.png $DEPLOYPATH/assets/screenshots/android/1.0/06-make.png
+    - /bin/cp assets/screenshots/android/1.0/07-tax-export.png $DEPLOYPATH/assets/screenshots/android/1.0/07-tax-export.png
+    - /bin/cp assets/screenshots/android/1.0/08-team.png $DEPLOYPATH/assets/screenshots/android/1.0/08-team.png
     - /bin/cp robots.txt $DEPLOYPATH
     - /bin/cp sitemap.xml $DEPLOYPATH
     - /bin/mkdir -p $DEPLOYPATH/maker/privacy
