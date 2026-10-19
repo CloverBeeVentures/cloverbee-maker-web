@@ -33,13 +33,16 @@ if(nav){
 
 document.querySelectorAll('a[href="privacy.html"]').forEach(a=>{a.href='/maker/privacy.html';});
 
-// Put Google Play status at the same visual level as the Apple App Store CTA.
+// Put Google Play availability at the same visual level as the Apple App Store status.
 const heroActions=document.querySelector('.hero-actions');
 if(heroActions&&!heroActions.querySelector('.android-release-cta')){
   const androidButton=document.createElement('a');
-  androidButton.className='button android-release-cta';
-  androidButton.href='#availability';
-  androidButton.textContent='Google Play — Store release pending';
+  androidButton.className='google-play-badge android-release-cta';
+  androidButton.href='https://play.google.com/store/apps/details?id=ca.cloverbee.maker';
+  androidButton.target='_blank';
+  androidButton.rel='noopener noreferrer';
+  androidButton.setAttribute('aria-label','Get CloverBee Maker on Google Play');
+  androidButton.innerHTML='<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="194" height="75">';
   const compareButton=heroActions.querySelector('.button-ghost');
   heroActions.insertBefore(androidButton,compareButton||null);
 }
@@ -56,7 +59,7 @@ if(trustStrip){
   if(!trustStrip.querySelector('[data-highlight="android"]')){
     const android=document.createElement('li');
     android.dataset.highlight='android';
-    android.textContent='Google Play · Store release pending';
+    android.textContent='Available now on Google Play';
     trustStrip.appendChild(android);
   }
 }
@@ -67,14 +70,14 @@ if(trustStrip){
  */
 const RELEASE_CONFIG=Object.freeze({
   ios:Object.freeze({state:'pending',url:''}), // pending | live
-  android:Object.freeze({state:'pending',url:''}) // pending | live
+  android:Object.freeze({state:'live',url:'https://play.google.com/store/apps/details?id=ca.cloverbee.maker'}) // pending | live
 });
 
 const iosIsLive=RELEASE_CONFIG.ios.state==='live'&&Boolean(RELEASE_CONFIG.ios.url);
 const androidIsLive=RELEASE_CONFIG.android.state==='live'&&Boolean(RELEASE_CONFIG.android.url);
 
 document.querySelectorAll('.release-cta').forEach(link=>{
-  link.textContent=iosIsLive?'Download on the Apple App Store':'Apple App Store — Store release pending';
+  link.textContent=iosIsLive?'Download on the Apple App Store':'Apple App Store — Waiting for Review';
   link.href=iosIsLive?RELEASE_CONFIG.ios.url:'#availability';
   if(iosIsLive){
     link.target='_blank';
@@ -89,15 +92,15 @@ const iosStatus=document.querySelector('[data-ios-status]');
 if(iosStatus){
   iosStatus.textContent=iosIsLive
     ?'Available on iPhone and iPad'
-    :'Apple App Store · Store release pending';
+    :'Apple App Store · Waiting for Review';
 }
 
 const iosStoreCard=document.querySelector('.ios-store-card');
 if(iosStoreCard){
   const title=iosStoreCard.querySelector('strong');
   const detail=iosStoreCard.querySelector('em');
-  if(title)title.textContent=iosIsLive?'Download on the Apple App Store':'Store release pending';
-  if(detail)detail.textContent=iosIsLive?'Available on iPhone and iPad':'Not publicly available';
+  if(title)title.textContent=iosIsLive?'Download on the Apple App Store':'Waiting for Review';
+  if(detail)detail.textContent=iosIsLive?'Available on iPhone and iPad':'Manual release; not yet public';
   if(iosIsLive){
     iosStoreCard.setAttribute('role','link');
     iosStoreCard.setAttribute('tabindex','0');
@@ -113,9 +116,11 @@ if(iosStoreCard){
 
 const androidButton=document.querySelector('.android-release-cta');
 if(androidButton){
-  androidButton.textContent=androidIsLive?'Get it on Google Play':'Google Play — Store release pending';
   androidButton.href=androidIsLive?RELEASE_CONFIG.android.url:'#availability';
-  if(androidIsLive){androidButton.target='_blank';androidButton.rel='noopener noreferrer';}
+  if(androidIsLive){
+    androidButton.target='_blank';
+    androidButton.rel='noopener noreferrer';
+  }
 }
 
 const androidStoreCard=document.querySelector('.android-store-card');
@@ -124,12 +129,17 @@ if(androidStoreCard){
   const detail=androidStoreCard.querySelector('em');
   if(title)title.textContent=androidIsLive?'Get it on Google Play':'Store release pending';
   if(detail)detail.textContent=androidIsLive?'Available on Android':'Not publicly available';
+  if(androidIsLive){
+    androidStoreCard.href=RELEASE_CONFIG.android.url;
+    androidStoreCard.target='_blank';
+    androidStoreCard.rel='noopener noreferrer';
+  }
 }
 
 const storeNote=document.querySelector('.store-note');
 if(storeNote){
   storeNote.textContent=iosIsLive||androidIsLive
-    ?'Check each platform card for current availability. A platform is announced only after its public store build passes final checks.'
+    ?'CloverBee Maker 1.0.0 is available on Google Play in Canada and the United States. The iPhone and iPad release remains in Apple review under manual release control.'
     :'iOS and Android are being prepared in parallel for a coordinated release. Each platform remains subject to its own review, physical-device checks and explicit owner approval. Neither app is publicly available.';
 }
 
@@ -139,7 +149,7 @@ const finalBody=hasHomepageAvailability?document.querySelector('.final-cta p:not
 if(finalEyebrow)finalEyebrow.textContent=iosIsLive||androidIsLive?'Maker 1.0 availability':'Store release pending';
 if(finalBody){
   finalBody.textContent=iosIsLive||androidIsLive
-    ?'Maker 1.0 brings the complete Free + Paid small-business workflow to supported devices.'
+    ?'Install Maker 1.0 on Android today. The Apple App Store release is still waiting for review.'
     :'iOS and Android are being prepared in parallel. Public availability begins only after store approval, owner approval and final physical-device checks.';
 }
 
